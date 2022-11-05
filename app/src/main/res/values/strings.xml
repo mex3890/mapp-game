@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MappGame</string>
+    <string name="options">opções</string>
+    <string name="play">Jogar</string>
+    <string name="login">Login</string>
+    <string name="register">Cadastro</string>
+    <string name="main_logo">Main logo</string>
+    <string name="loginTitle">Login</string>
+    <string name="email">E-mail</string>
+    <string name="email_label">E-mail</string>
+    <string name="password_label">Senha</string>
+</resources>
