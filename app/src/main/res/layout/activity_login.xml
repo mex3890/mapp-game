@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/mainLogo"
+        android:id="@+id/mainLogoOptions"
         android:layout_width="287dp"
         android:layout_height="287dp"
         android:layout_marginTop="0dp"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/mainLogoOptions" />
 
     <LinearLayout
         android:id="@+id/loginForm"

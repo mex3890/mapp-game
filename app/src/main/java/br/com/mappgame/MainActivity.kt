@@ -15,5 +15,11 @@ class MainActivity : AppCompatActivity() {
             val Intent = Intent(this, LoginActivity::class.java)
             startActivity(Intent)
         }
+
+        val optionsActBtn = findViewById<Button>(R.id.optionsBtn)
+        optionsActBtn.setOnClickListener{
+            val Intent = Intent(this,OptionsActivity::class.java)
+            startActivity(Intent)
+        }
     }
 }
