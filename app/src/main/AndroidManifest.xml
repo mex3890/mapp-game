@@ -20,6 +20,29 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".DataViewPatientActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".PatientListActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ProfessionalActivity"
+            android:exported="false"
+            android:label="@string/title_activity_professional"
+            android:theme="@style/Theme.MappGame.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ProfileActivity"
             android:exported="false" >
             <meta-data
