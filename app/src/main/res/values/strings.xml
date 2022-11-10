@@ -11,4 +11,5 @@
     <string name="password_label">Senha</string>
     <string name="cpf">CPF</string>
     <string name="name">Nome</string>
+    <string name="professional">Profissionais</string>
 </resources>
