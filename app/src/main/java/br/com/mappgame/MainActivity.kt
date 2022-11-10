@@ -27,5 +27,11 @@ class MainActivity : AppCompatActivity() {
             val Intent = Intent(this,OptionsActivity::class.java)
             startActivity(Intent)
         }
+
+        val professionalActBtn = findViewById<Button>(R.id.professionalBtn)
+        professionalActBtn.setOnClickListener{
+            val Intent = Intent(this, ProfessionalActivity::class.java)
+            startActivity(Intent)
+        }
     }
 }
