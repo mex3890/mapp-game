@@ -9,4 +9,8 @@
     <string name="email">E-mail</string>
     <string name="email_label">E-mail</string>
     <string name="password_label">Senha</string>
+    <string name="cpf">CPF</string>
+    <string name="name">Nome</string>
+    <string name="professional">Profissionais</string>
+	<string name="title_activity_professional">ProfessionalActivity</string>
 </resources>

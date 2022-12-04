@@ -15,5 +15,23 @@ class MainActivity : AppCompatActivity() {
             val Intent = Intent(this, LoginActivity::class.java)
             startActivity(Intent)
         }
+
+        val registerActBtn = findViewById<Button>(R.id.registerBtn)
+        registerActBtn.setOnClickListener {
+            val Intent = Intent(this, RegisterActivity::class.java)
+            startActivity(Intent)
+        }
+
+        val optionsActBtn = findViewById<Button>(R.id.optionsBtn)
+        optionsActBtn.setOnClickListener{
+            val Intent = Intent(this,OptionsActivity::class.java)
+            startActivity(Intent)
+        }
+
+        val professionalActBtn = findViewById<Button>(R.id.professionalBtn)
+        professionalActBtn.setOnClickListener{
+            val Intent = Intent(this, ProfessionalActivity::class.java)
+            startActivity(Intent)
+        }
     }
 }
