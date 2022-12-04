@@ -1,16 +1,21 @@
 <resources>
-    <string name="app_name">MappGame</string>
-    <string name="options">opções</string>
-    <string name="play">Jogar</string>
-    <string name="login">Login</string>
-    <string name="register">Cadastro</string>
-    <string name="main_logo">Main logo</string>
-    <string name="loginTitle">Login</string>
-    <string name="email">E-mail</string>
-    <string name="email_label">E-mail</string>
-    <string name="password_label">Senha</string>
+    <string name="app_name">Mapp Game</string>
+    <string name="register_password_hint_text">Password</string>
+    <string name="register_email_hint_text">E-mail</string>
+    <string name="register_name_hint_text">Name</string>
+    <string name="register_phone_hint_text">Phone number</string>
+    <string name="register_title">Sign Up</string>
+    <string name="register_redirect_to_login_link">Already have an Account?\nClick to Login</string>
+    <string name="register_button_label">Sign Up</string>
+    <string name="login_button_label">Login</string>
+    <string name="login_redirect_link_to_register">Don\'t have an Account?\nClick to Register</string>
+    <string name="login_password_hint_text">Password</string>
+    <string name="login_email_hint_text">E-mail</string>
+    <string name="login_title">Login</string>
+    <string name="main_logo">Mapp_game_logo</string>
+    <string name="mapp_game_logo_description">Mapp Game logo</string>
+    <string name="profiles_title">Profiles</string>
+    <string name="register">Register</string>
     <string name="cpf">CPF</string>
-    <string name="name">Nome</string>
-    <string name="professional">Profissionais</string>
-	<string name="title_activity_professional">ProfessionalActivity</string>
+    <string name="logout">Logout</string>
 </resources>
