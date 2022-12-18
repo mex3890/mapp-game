@@ -8,13 +8,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="183dp"
-        android:layout_height="141dp"
-        android:layout_marginTop="77dp"
-        android:layout_marginBottom="35dp"
-        android:contentDescription="TODO"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="34dp"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:mipmap/sym_def_app_icon" />
@@ -23,12 +23,12 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="42dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginBottom="17dp"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/plot"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:text="Nome Paciente" />
 
@@ -36,28 +36,11 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="25dp"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:text="Idade Paciente" />
-
-    <com.androidplot.xy.XYPlot
-        android:id="@+id/plot"
-        style="@style/APDefacto.Dark"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginBottom="286dp"
-        android:textAlignment="center"
-        app:domainTitle="domain"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView18"
-        app:layout_constraintStart_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:lineLabelRotationBottom="-45"
-        app:lineLabels="left|bottom"
-        app:rangeTitle="range"
-        app:title="Analise de Desenvolvimento" />
 </androidx.constraintlayout.widget.ConstraintLayout>
