@@ -4,8 +4,9 @@ import br.com.mappgame.models.DefaultResponse
 import br.com.mappgame.models.LoginResponse
 import br.com.mappgame.models.UserPatientsIndexResponse
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.Field
 import java.util.Date
+import retrofit2.http.POST
 
 interface Api {
 
