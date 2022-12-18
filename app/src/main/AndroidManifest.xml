@@ -16,6 +16,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activities.DataViewActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.CreateNewProfile"
             android:exported="false">
             <meta-data
@@ -85,9 +92,11 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".activities.StageFour"
+        <activity
+            android:name=".activities.StageFour"
             android:exported="false">
-            <meta-data android:name="android.app.lib_name"
+            <meta-data
+                android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity

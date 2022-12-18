@@ -2,6 +2,7 @@ package br.com.mappgame.api
 
 import br.com.mappgame.models.DefaultResponse
 import br.com.mappgame.models.LoginResponse
+import br.com.mappgame.models.PatientAnswersResponse
 import br.com.mappgame.models.UserPatientsIndexResponse
 import retrofit2.Call
 import retrofit2.http.*
@@ -55,4 +56,9 @@ interface Api {
         @Field("answers") answers: String,
         @Field("patient_id") patient_id: Int
     ):retrofit2.Call<DefaultResponse>
+
+    @GET("patients/answers/{patient_id}")
+    fun patientAnswers(
+        @Path("patient_id") patient_id: Int
+    ):Call<PatientAnswersResponse>
 }

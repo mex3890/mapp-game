@@ -1,5 +1,6 @@
 package br.com.mappgame.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -58,9 +59,11 @@ class StageFive : AppCompatActivity() {
                     val code = response.code()
 
                     if (code == 200) {
+                        startActivity(Intent(this@StageFive, UserProfileActivity::class.java))
+
                         Toast.makeText(
                             applicationContext,
-                            "Temos que implementar um redirecionamento",
+                            response.body()?.message,
                             Toast.LENGTH_LONG
                         ).show()
                     }

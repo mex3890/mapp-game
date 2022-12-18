@@ -9,8 +9,6 @@ import br.com.mappgame.api.RetrofitClient
 import br.com.mappgame.models.LoginResponse
 import br.com.mappgame.storage.SharedPrefManager
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.editTextEmail
-import kotlinx.android.synthetic.main.activity_login.editTextPassword
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
         // Link to redirect user to register activity(mainActivity - todo, create registerActivity)
         textViewRegister.setOnClickListener {
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+//            startActivity(Intent(this@LoginActivity, DataViewActivity::class.java))
         }
 
         buttonLogin.setOnClickListener {
@@ -51,31 +50,49 @@ class LoginActivity : AppCompatActivity() {
                         val code = response.code()
 
                         if (code == 202) {
-                            Toast.makeText(applicationContext, response.body()?.error, Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                applicationContext,
+                                response.body()?.error,
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
 
                         if (code == 200) {
-                            SharedPrefManager.getInstance(applicationContext).saveUser(response.body()?.user!!)
+                            SharedPrefManager.getInstance(applicationContext)
+                                .saveUser(response.body()?.user!!)
 
                             val intent = Intent(applicationContext, UserProfileActivity::class.java)
 
-                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            intent.flags =
+                                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
                             startActivity(intent)
                         }
 
 
                         if (response.code() == 500) {
-                            Toast.makeText(applicationContext, "Internal Server error, try again latter!", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                applicationContext,
+                                "Internal Server error, try again latter!",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
 
                         if (code == 203) {
-                            Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                applicationContext,
+                                response.body()?.message,
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                     }
 
                     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                            Toast.makeText(applicationContext, "Internal App Error, try again letter or verify your connection", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            applicationContext,
+                            "Internal App Error, try again letter or verify your connection",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
 
                 })
