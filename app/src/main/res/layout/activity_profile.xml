@@ -1,139 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    android:background="@color/colorPrimaryBackground"
+    android:padding="16dp"
+    tools:context=".activities.ProfileActivity">
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimaryButton"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/profileButtonReturn"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/logout_button_description"
+            android:src="@drawable/return_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonAudio"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/profiles_button_description"
+            android:src="@drawable/audio_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonHome"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/home_button_description"
+            android:src="@drawable/main_logo_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonProfile"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_profile_description"
+            android:src="@drawable/profile_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonSettings"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_settings_description"
+            android:src="@drawable/settings_icon" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/welcome_text_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navBar"
+        android:layout_marginTop="20dp"
+        android:text="@string/welcome"
+        android:textAlignment="center"
+        android:textColor="@color/colorFormBackground"
+        android:textSize="20sp" />
 
     <ImageView
-        android:id="@+id/mainLogoOptions"
-        android:layout_width="152dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/main_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/main_logo" />
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonLogin"
+        android:layout_below="@+id/welcome_text_profile"
+        android:layout_marginTop="142dp"
+        android:layout_marginBottom="142dp"
+        android:contentDescription="@string/mapp_game_logo_description"
+        app:srcCompat="@drawable/main_logo"
+        tools:ignore="ImageContrastCheck" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="46dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="56dp"
-        android:text="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainLogoOptions" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="46dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
-        android:text="2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="46dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
-        android:text="3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="46dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
-        android:text="4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="46dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
-        android:text="5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-    <Button
-        android:id="@+id/buttonAddProfile"
-        android:layout_width="46dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
-        android:text="+"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="52dp"
-        android:text="Profile 1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainLogoOptions" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="43dp"
+        android:background="@color/colorPrimaryButton"
+        android:ellipsize="none"
+        android:text="@string/profile_play_button"
+        android:textAllCaps="false"
+        android:textColor="@color/colorFormBackground" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="52dp"
-        android:text="Profile 2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="52dp"
-        android:text="Profile 3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="52dp"
-        android:text="Profile 4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="52dp"
-        android:text="Profile 5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/addNewProfileLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="52dp"
-        android:text="Add New Profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

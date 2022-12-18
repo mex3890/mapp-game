@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryBackground"
     android:padding="16dp"
-    tools:context=".activities.UserProfileActivity">
+    tools:context=".activities.CreateNewProfile">
 
     <LinearLayout
         android:id="@+id/navBar"
@@ -18,7 +18,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/userButtonReturn"
+            android:id="@+id/userUpdateButtonReturn"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -26,7 +26,7 @@
             android:src="@drawable/return_icon" />
 
         <ImageButton
-            android:id="@+id/userButtonProfiles"
+            android:id="@+id/userUpdateButtonProfiles"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -34,7 +34,7 @@
             android:src="@drawable/profiles_icon" />
 
         <ImageButton
-            android:id="@+id/userButtonHome"
+            android:id="@+id/userUpdateButtonHome"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
@@ -42,7 +42,7 @@
             android:src="@drawable/main_logo_icon" />
 
         <ImageButton
-            android:id="@+id/userButtonProfile"
+            android:id="@+id/userUpdateButtonProfile"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -50,7 +50,7 @@
             android:src="@drawable/profile_icon" />
 
         <ImageButton
-            android:id="@+id/userButtonLogout"
+            android:id="@+id/userUpdateButtonLogout"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -65,30 +65,51 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/navBar"
         android:layout_marginTop="31dp"
-        android:text="@string/profiles_title"
+        android:text="@string/create_profile_title"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@color/colorFormBackground" />
 
     <LinearLayout
-        android:id="@+id/profileList"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/newProfileButton"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/profileTitle"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="vertical">
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorFormBackground"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:drawablePadding="5dp"
+            android:hint="@string/register_name_hint_text"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editBirthDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
+            android:drawablePadding="5dp"
+            android:hint="@string/birth_date_hint"
+            android:inputType="date" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/newProfileButton"
+        android:id="@+id/buttonCreate"
         android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="41dp"
         android:background="@color/colorPrimaryButton"
-        android:text="@string/button_new_profile_text"
+        android:text="@string/create_button_text"
+        android:textAllCaps="false"
         android:textColor="@color/colorFormBackground" />
 
 </RelativeLayout>
