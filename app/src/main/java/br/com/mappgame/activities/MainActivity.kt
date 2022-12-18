@@ -1,9 +1,9 @@
 package br.com.mappgame.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import br.com.mappgame.R
 import br.com.mappgame.api.RetrofitClient
 import br.com.mappgame.models.DefaultResponse
@@ -57,22 +57,41 @@ class MainActivity : AppCompatActivity() {
             }
 
             RetrofitClient.instance.registerUser(email, password, name, phone)
-                .enqueue(object: Callback<DefaultResponse> {
+                .enqueue(object : Callback<DefaultResponse> {
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                        Toast.makeText(applicationContext, "Internal App Error, try again letter or verify your connection", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            applicationContext,
+                            "Internal App Error, try again letter or verify your connection",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
 
-                    override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
-                        if(response.code() == 202) {
-                            Toast.makeText(applicationContext, response.body()?.error, Toast.LENGTH_LONG).show()
+                    override fun onResponse(
+                        call: Call<DefaultResponse>,
+                        response: Response<DefaultResponse>
+                    ) {
+                        if (response.code() == 202) {
+                            Toast.makeText(
+                                applicationContext,
+                                response.body()?.error,
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
 
                         if (response.code() == 500) {
-                            Toast.makeText(applicationContext, "Internal Server error, try again latter!", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                applicationContext,
+                                "Internal Server error, try again latter!",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
 
                         if (response.code() == 200) {
-                            Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                applicationContext,
+                                response.body()?.message,
+                                Toast.LENGTH_LONG
+                            ).show()
                             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
                         }
                     }

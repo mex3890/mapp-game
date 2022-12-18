@@ -1,11 +1,12 @@
-package br.com.mappgame
+package br.com.mappgame.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.mappgame.R
 
-class NewProfileActivity : AppCompatActivity() {
+class UpdateProfile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_profile)
+        setContentView(R.layout.activity_update_profile)
     }
 }
