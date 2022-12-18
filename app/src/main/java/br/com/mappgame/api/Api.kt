@@ -48,4 +48,11 @@ interface Api {
         @Field("birth_date") birth_date: String,
         @Field("user_id") user_id: Int
     ):Call<DefaultResponse>
+
+    @FormUrlEncoded
+    @POST("answers")
+    fun answersUser(
+        @Field("answers") answers: String,
+        @Field("patient_id") patient_id: Int
+    ):retrofit2.Call<DefaultResponse>
 }

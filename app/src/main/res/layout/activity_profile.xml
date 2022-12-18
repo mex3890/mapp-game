@@ -73,7 +73,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/buttonLogin"
+        android:layout_above="@+id/profileButtonPlay"
         android:layout_below="@+id/welcome_text_profile"
         android:layout_marginTop="142dp"
         android:layout_marginBottom="142dp"
@@ -82,7 +82,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/profileButtonPlay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

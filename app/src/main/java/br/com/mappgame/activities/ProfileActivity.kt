@@ -28,12 +28,16 @@ class ProfileActivity : AppCompatActivity() {
         textViewProfileWelcome.text = "Welcome, ".plus(profileName)
 
         profileButtonReturn.setOnClickListener {
-            SharedPrefManager.getInstance(this)
             val intent = Intent(applicationContext, UserProfileActivity::class.java)
 
             startActivity(intent)
         }
 
+        profileButtonPlay.setOnClickListener {
+            val intent = Intent(applicationContext, StageOne::class.java)
+            intent.putExtra("patient_id", profileId)
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {
