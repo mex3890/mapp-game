@@ -24,4 +24,6 @@ interface Api {
         @Field("email") email: String,
         @Field("password") password: String
     ):Call<LoginResponse>
+
+    @GET("patients/answers/{patient_id}")
 }
