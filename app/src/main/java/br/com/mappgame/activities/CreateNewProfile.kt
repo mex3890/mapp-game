@@ -37,27 +37,27 @@ class CreateNewProfile : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            RetrofitClient.instance.storePatient(name, birthDate)
-                .enqueue(object: Callback<DefaultResponse> {
-                    override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                        Toast.makeText(applicationContext, "Internal App Error, try again letter or verify your connection", Toast.LENGTH_LONG).show()
-                    }
-
-                    override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
-                        if(response.code() == 202) {
-                            Toast.makeText(applicationContext, response.body()?.error, Toast.LENGTH_LONG).show()
-                        }
-
-                        if (response.code() == 500) {
-                            Toast.makeText(applicationContext, "Internal Server error, try again latter!", Toast.LENGTH_LONG).show()
-                        }
-
-                        if (response.code() == 200) {
-                            Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
-                            startActivity(Intent(this@MainActivity, LoginActivity::class.java))
-                        }
-                    }
-                })
+//            RetrofitClient.instance.storePatient(name, birthDate)
+//                .enqueue(object: Callback<DefaultResponse> {
+//                    override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+//                        Toast.makeText(applicationContext, "Internal App Error, try again letter or verify your connection", Toast.LENGTH_LONG).show()
+//                    }
+//
+//                    override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
+//                        if(response.code() == 202) {
+//                            Toast.makeText(applicationContext, response.body()?.error, Toast.LENGTH_LONG).show()
+//                        }
+//
+//                        if (response.code() == 500) {
+//                            Toast.makeText(applicationContext, "Internal Server error, try again latter!", Toast.LENGTH_LONG).show()
+//                        }
+//
+//                        if (response.code() == 200) {
+//                            Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+//                            startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+//                        }
+//                    }
+//                })
         }
     }
 }
