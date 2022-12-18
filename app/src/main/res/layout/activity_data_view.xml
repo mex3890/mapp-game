@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryBackground"
     android:padding="16dp"
-    tools:context=".activities.ProfileActivity">
+    tools:context=".activities.DataViewActivity">
 
     <LinearLayout
         android:id="@+id/navBar"
@@ -58,39 +58,16 @@
             android:src="@drawable/settings_icon" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/welcome_text_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/navBar"
-        android:layout_marginTop="20dp"
-        android:text="@string/welcome"
-        android:textAlignment="center"
-        android:textColor="@color/colorFormBackground"
-        android:textSize="20sp" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/profileButtonPlay"
-        android:layout_below="@+id/welcome_text_profile"
+        android:layout_below="@+id/navBar"
         android:layout_marginTop="142dp"
         android:layout_marginBottom="142dp"
         android:contentDescription="@string/mapp_game_logo_description"
         app:srcCompat="@drawable/main_logo"
         tools:ignore="ImageContrastCheck" />
 
-    <Button
-        android:id="@+id/profileButtonPlay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="43dp"
-        android:background="@color/colorPrimaryButton"
-        android:ellipsize="none"
-        android:text="@string/profile_play_button"
-        android:textAllCaps="false"
-        android:textColor="@color/colorFormBackground" />
 
 </RelativeLayout>

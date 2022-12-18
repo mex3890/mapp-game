@@ -1,34 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_profiles_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@color/colorPrimaryBackground"
+    android:padding="16dp"
     tools:context=".activities.UserProfileActivity">
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimaryButton"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/userButtonReturn"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/logout_button_description"
+            android:src="@drawable/return_icon" />
+
+        <ImageButton
+            android:id="@+id/userButtonProfiles"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/profiles_button_description"
+            android:src="@drawable/profiles_icon" />
+
+        <ImageButton
+            android:id="@+id/userButtonHome"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/home_button_description"
+            android:src="@drawable/main_logo_icon" />
+
+        <ImageButton
+            android:id="@+id/userButtonProfile"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_profile_description"
+            android:src="@drawable/profile_icon" />
+
+        <ImageButton
+            android:id="@+id/userButtonLogout"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_settings_description"
+            android:src="@drawable/logout_icon" />
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/profileTitle"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="67dp"
+        android:layout_below="@+id/navBar"
+        android:layout_marginTop="31dp"
         android:text="@string/profiles_title"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@color/colorFormBackground" />
 
-    <Button
-        android:id="@+id/buttonLogout"
+    <LinearLayout
+        android:id="@+id/profileList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/newProfileButton"
+        android:layout_below="@+id/profileTitle"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/newProfileButton"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="38dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginBottom="0dp"
         android:background="@color/colorPrimaryButton"
-        android:ellipsize="none"
-        android:text="@string/logout"
-        android:textAllCaps="false"
+        android:text="@string/button_new_profile_text"
         android:textColor="@color/colorFormBackground" />
+
 </RelativeLayout>
