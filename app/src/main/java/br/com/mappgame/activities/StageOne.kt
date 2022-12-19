@@ -23,7 +23,7 @@ class StageOne : AppCompatActivity() {
             answers = answers.plus("l1:o1|")
             if (profileBirthDate != null) {
                 if (profileName != null) {
-                    nextStage(answers, patient_id, profileName, profileBirthDate, patientUserId)
+                    nextStage(answers, patient_id, profileName, profileBirthDate.toString(), patientUserId)
                 }
             }
         }
@@ -33,7 +33,7 @@ class StageOne : AppCompatActivity() {
             answers = answers.plus("l1:o2|")
             if (profileBirthDate != null) {
                 if (profileName != null) {
-                    nextStage(answers, patient_id, profileName, profileBirthDate, patientUserId)
+                    nextStage(answers, patient_id, profileName, profileBirthDate.toString(), patientUserId)
                 }
             }
         }
@@ -43,7 +43,7 @@ class StageOne : AppCompatActivity() {
             answers = answers.plus("l1:o3|")
             if (profileBirthDate != null) {
                 if (profileName != null) {
-                    nextStage(answers, patient_id, profileName, profileBirthDate, patientUserId)
+                    nextStage(answers, patient_id, profileName, profileBirthDate.toString(), patientUserId)
                 }
             }
         }
@@ -53,7 +53,7 @@ class StageOne : AppCompatActivity() {
             answers = answers.plus("l1:o4|")
             if (profileBirthDate != null) {
                 if (profileName != null) {
-                    nextStage(answers, patient_id, profileName, profileBirthDate, patientUserId)
+                    nextStage(answers, patient_id, profileName, profileBirthDate.toString(), patientUserId)
                 }
             }
         }
@@ -63,7 +63,7 @@ class StageOne : AppCompatActivity() {
             val intent = Intent(this, ProfileActivity::class.java)
             intent.putExtra("id", patient_id)
             intent.putExtra("name", profileName)
-            intent.putExtra("birthdate", profileBirthDate)
+            intent.putExtra("birthdate".toString(), profileBirthDate)
             intent.putExtra("userID", patientUserId)
             startActivity(intent)
         }
@@ -82,7 +82,7 @@ class StageOne : AppCompatActivity() {
         intent.putExtra("questionValue", answers)
         intent.putExtra("patient_id", patient_id)
         intent.putExtra("profileName", profileName)
-        intent.putExtra("profileBirthDate", profileBirthDate)
+        intent.putExtra("profileBirthDate".toString(), profileBirthDate)
         intent.putExtra("patientUserID", patientUserId)
         startActivity(intent)
 

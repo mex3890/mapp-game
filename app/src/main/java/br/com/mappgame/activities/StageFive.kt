@@ -53,7 +53,7 @@ class StageFive : AppCompatActivity() {
             val intent = Intent(this, ProfileActivity::class.java)
             intent.putExtra("id", patient_id)
             intent.putExtra("name", profileName)
-            intent.putExtra("birthdate", profileBirthDate)
+            intent.putExtra("birthdate", profileBirthDate.toString())
             intent.putExtra("userID", patientUserId)
             startActivity(intent)
         }

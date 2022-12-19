@@ -37,7 +37,7 @@ class ProfileActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, StageOne::class.java)
             intent.putExtra("patient_id", profileId)
             intent.putExtra("profileName",profileName)
-            intent.putExtra("profileBirthDate",profileBirthDate)
+            intent.putExtra("profileBirthDate",profileBirthDate.toString())
             intent.putExtra("patientUserID",patientUserId)
             startActivity(intent)
         }
