@@ -11,41 +11,79 @@ class StageOne : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stage_one)
 
-        var patient_id = intent.getIntExtra("patient_id",0)
+        var patient_id = intent.getIntExtra("patient_id", 0)
+        val profileName = intent.getStringExtra("profileName")
+        val profileBirthDate = intent.getStringExtra("profileBirthDate")
+        val patientUserId = intent.getIntExtra("patientUserID", 0)
 
         var answers = ""
 
         val nextStageA = findViewById<ImageButton>(R.id.imageButton1)
         nextStageA.setOnClickListener {
             answers = answers.plus("l1:o1|")
-            nextStage(answers,patient_id)
+            if (profileBirthDate != null) {
+                if (profileName != null) {
+                    nextStage(answers, patient_id, profileName, profileBirthDate, patientUserId)
+                }
+            }
         }
 
         val nextStageB = findViewById<ImageButton>(R.id.imageButton2)
         nextStageB.setOnClickListener {
             answers = answers.plus("l1:o2|")
-            nextStage(answers,patient_id)
+            if (profileBirthDate != null) {
+                if (profileName != null) {
+                    nextStage(answers, patient_id, profileName, profileBirthDate, patientUserId)
+                }
+            }
         }
 
         val nextStageC = findViewById<ImageButton>(R.id.imageButton3)
         nextStageC.setOnClickListener {
             answers = answers.plus("l1:o3|")
-            nextStage(answers,patient_id)
+            if (profileBirthDate != null) {
+                if (profileName != null) {
+                    nextStage(answers, patient_id, profileName, profileBirthDate, patientUserId)
+                }
+            }
         }
 
         val nextStageD = findViewById<ImageButton>(R.id.imageButton4)
         nextStageD.setOnClickListener {
             answers = answers.plus("l1:o4|")
-            nextStage(answers,patient_id)
+            if (profileBirthDate != null) {
+                if (profileName != null) {
+                    nextStage(answers, patient_id, profileName, profileBirthDate, patientUserId)
+                }
+            }
+        }
+
+        val profileButtonReturn = findViewById<ImageButton>(R.id.profileButtonReturn)
+        profileButtonReturn.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("id", patient_id)
+            intent.putExtra("name", profileName)
+            intent.putExtra("birthdate", profileBirthDate)
+            intent.putExtra("userID", patientUserId)
+            startActivity(intent)
         }
 
 
     }
 
-    private fun nextStage(answers: String, patient_id: Int) {
+    private fun nextStage(
+        answers: String,
+        patient_id: Int,
+        profileName: String,
+        profileBirthDate: String,
+        patientUserId: Int
+    ) {
         val intent = Intent(this, StageTwo::class.java)
         intent.putExtra("questionValue", answers)
-        intent.putExtra("patient_id",patient_id)
+        intent.putExtra("patient_id", patient_id)
+        intent.putExtra("profileName", profileName)
+        intent.putExtra("profileBirthDate", profileBirthDate)
+        intent.putExtra("patientUserID", patientUserId)
         startActivity(intent)
 
     }
