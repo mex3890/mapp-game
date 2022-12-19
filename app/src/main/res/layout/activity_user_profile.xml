@@ -70,16 +70,23 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@color/colorFormBackground" />
 
-    <LinearLayout
-        android:id="@+id/profileList"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/newProfileButton"
         android:layout_below="@+id/profileTitle"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:orientation="vertical">
-    </LinearLayout>
+        android:scrollbarThumbVertical="@android:color/holo_orange_light"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <LinearLayout
+            android:id="@+id/profileList"
+            android:layout_width="match_parent"
+            android:paddingHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
     <Button
         android:id="@+id/newProfileButton"

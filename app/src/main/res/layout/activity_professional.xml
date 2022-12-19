@@ -1,69 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfessionalActivity">
+    android:background="@color/colorPrimaryBackground"
+    android:padding="16dp"
+    tools:context=".activities.ProfessionalActivity">
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimaryButton"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/profileButtonReturn"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/logout_button_description"
+            android:src="@drawable/return_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonAudio"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/profiles_button_description"
+            android:src="@drawable/audio_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonHome"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/home_button_description"
+            android:src="@drawable/main_logo_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonProfile"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_profile_description"
+            android:src="@drawable/profile_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonDelete"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_settings_description"
+            android:src="@drawable/trash_icon" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/welcome_text_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navBar"
+        android:layout_marginTop="20dp"
+        android:text="Welcome Professional"
+        android:textAlignment="center"
+        android:textColor="@color/colorFormBackground"
+        android:textSize="20sp" />
 
     <ImageView
-        android:id="@+id/mainLogoProfessional"
-        android:layout_width="218dp"
-        android:layout_height="197dp"
-        android:contentDescription="@string/main_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/main_logo" />
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/welcome_text_profile"
+        android:layout_marginTop="142dp"
+        android:layout_marginBottom="142dp"
+        android:contentDescription="@string/mapp_game_logo_description"
+        app:srcCompat="@drawable/main_logo"
+        tools:ignore="ImageContrastCheck" />
 
-    <Button
-        android:id="@+id/patientListBtn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Pacientes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainLogoProfessional"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/importBtn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Importação"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patientListBtn"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/professionalAccountBtn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Conta"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/importBtn"
-        app:layout_constraintVertical_bias="0.0"/>
-
-    <Button
-        android:id="@+id/professionalOptionsBtn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Opções"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/professionalAccountBtn"
-        app:layout_constraintVertical_bias="0.0" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

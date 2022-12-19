@@ -50,12 +50,12 @@
             android:src="@drawable/profile_icon" />
 
         <ImageButton
-            android:id="@+id/profileButtonSettings"
+            android:id="@+id/profileButtonDelete"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/button_settings_description"
-            android:src="@drawable/settings_icon" />
+            android:src="@drawable/trash_icon" />
     </LinearLayout>
 
     <TextView

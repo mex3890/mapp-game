@@ -18,10 +18,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Link to redirect user to register activity(mainActivity - todo, create registerActivity)
         textViewRegister.setOnClickListener {
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-//            startActivity(Intent(this@LoginActivity, DataViewActivity::class.java))
         }
 
         buttonLogin.setOnClickListener {
@@ -61,12 +59,21 @@ class LoginActivity : AppCompatActivity() {
                             SharedPrefManager.getInstance(applicationContext)
                                 .saveUser(response.body()?.user!!)
 
-                            val intent = Intent(applicationContext, UserProfileActivity::class.java)
+                            if (response.body()?.user!!.role == 1) {
+                                val intent =
+                                    Intent(applicationContext, UserProfileActivity::class.java)
 
-                            intent.flags =
-                                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                intent.flags =
+                                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
-                            startActivity(intent)
+                                startActivity(intent)
+                            } else {
+                                val intent = Intent(applicationContext, ProfileActivity::class.java)
+                                intent.flags =
+                                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+                                startActivity(intent)
+                            }
                         }
 
 

@@ -23,7 +23,8 @@ class SharedPrefManager private constructor(private val mCtx: Context) {
                     sharedPreferences.getInt("id", -1),
                     it,
                     sharedPreferences.getString("name", null)!!,
-                    sharedPreferences.getString("phone", null)!!
+                    sharedPreferences.getString("phone", null)!!,
+                    sharedPreferences.getInt("role", 1)
                 )
             }
         }

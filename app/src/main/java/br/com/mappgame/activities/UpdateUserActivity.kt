@@ -83,7 +83,7 @@ class UpdateUserActivity : AppCompatActivity() {
 
                             if (response.code() == 200) {
                                 val intent = Intent(applicationContext, UserProfileActivity::class.java)
-                                SharedPrefManager.getInstance(applicationContext).saveUser(User(user.id, email, name, phone))
+                                SharedPrefManager.getInstance(applicationContext).saveUser(User(user.id, email, name, phone, 1))
                                 startActivity(intent)
                             }
 

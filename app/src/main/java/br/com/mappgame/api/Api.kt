@@ -44,11 +44,11 @@ interface Api {
 
     @FormUrlEncoded
     @POST("patients/store/{user_id}")
-    fun storePatient(
-        @Field("name") name: String,
+    fun createPatient(
+        @Path("user_id") user_id: Int,
         @Field("birth_date") birth_date: String,
-        @Field("user_id") user_id: Int
-    ):Call<DefaultResponse>
+        @Field("name") name: String
+    ):retrofit2.Call<DefaultResponse>
 
     @FormUrlEncoded
     @POST("answers")
@@ -61,4 +61,17 @@ interface Api {
     fun patientAnswers(
         @Path("patient_id") patient_id: Int
     ):Call<PatientAnswersResponse>
+
+    @DELETE("patients/destroy/{patient_id}")
+    fun deletePatient(
+        @Path("patient_id") patient_id: Int
+    ):Call<DefaultResponse>
+
+    @FormUrlEncoded
+    @PUT("patients/update/{patient_id}")
+    fun updatePatient(
+        @Path("patient_id") patient_id: Int,
+        @Field("name") name: String,
+        @Field("birth_date") birth_date: String
+    ):Call<DefaultResponse>
 }
