@@ -31,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/estCinza"
+        app:srcCompat="@drawable/est_cinza"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -44,7 +44,7 @@
         app:layout_constraintHorizontal_bias="0.824"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/estVerde"
+        app:srcCompat="@drawable/est_verde"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -58,7 +58,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.762"
-        app:srcCompat="@drawable/estVermelha"
+        app:srcCompat="@drawable/est_vermelha"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -72,6 +72,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.762"
-        app:srcCompat="@drawable/estAzul"
+        app:srcCompat="@drawable/est_azul"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
