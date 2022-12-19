@@ -68,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
 
                                 startActivity(intent)
                             } else {
-                                val intent = Intent(applicationContext, ProfileActivity::class.java)
+                                val intent = Intent(applicationContext, ProfessionalActivity::class.java)
                                 intent.flags =
                                     Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
@@ -110,10 +110,15 @@ class LoginActivity : AppCompatActivity() {
         super.onStart()
 
         if (SharedPrefManager.getInstance(this).isLoggedIn) {
-            val intent = Intent(applicationContext, UserProfileActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-
-            startActivity(intent)
+            if (SharedPrefManager.getInstance(this).user?.role == 1) {
+                val intent = Intent(applicationContext, UserProfileActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            } else if (SharedPrefManager.getInstance(this).user?.role == 2) {
+                val intent = Intent(applicationContext, ProfessionalActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
         }
     }
 }

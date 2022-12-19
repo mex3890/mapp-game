@@ -29,23 +29,87 @@ class UpdateProfileActivity : AppCompatActivity() {
         editBirthDate.setText(birthDate)
         editTextName.setText(name)
 
-        updateButtonProfile.setOnClickListener {
-            val birthDate = editBirthDate.text.toString().trim()
-            val name = editTextName.text.toString().trim()
+        profileUpdateButtonReturn.setOnClickListener {
+            val intent = Intent(applicationContext, ProfileActivity::class.java)
+            intent.putExtra("id", id)
+            intent.putExtra("name", name)
+            intent.putExtra("birthDate", birthDate)
+            intent.putExtra("userId", userId)
+            startActivity(intent)
+        }
 
-            if (name.isEmpty()) {
+        profileUpdateButtonProfile.setOnClickListener {
+            val intent = Intent(applicationContext, ProfileActivity::class.java)
+            intent.putExtra("id", id)
+            intent.putExtra("name", name)
+            intent.putExtra("birthDate", birthDate)
+            intent.putExtra("userId", userId)
+            startActivity(intent)
+        }
+
+        profileUpdateButtonDelete.setOnClickListener {
+            RetrofitClient.instance.deletePatient(id)
+                .enqueue(object : Callback<DefaultResponse> {
+                    override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                        Toast.makeText(
+                            applicationContext,
+                            "Internal App Error, try again letter or verify your connection",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+
+                    override fun onResponse(
+                        call: Call<DefaultResponse>,
+                        response: Response<DefaultResponse>
+                    ) {
+
+                        Toast.makeText(applicationContext, response.code().toString(), Toast.LENGTH_LONG).show()
+
+                        if (response.code() == 202) {
+                            Toast.makeText(
+                                applicationContext,
+                                response.body()?.error,
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
+                        if (response.code() == 500) {
+                            Toast.makeText(
+                                applicationContext,
+                                "Internal Server error, try again latter!",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
+                        if (response.code() == 200) {
+                            Toast.makeText(
+                                applicationContext,
+                                response.body()?.message,
+                                Toast.LENGTH_LONG
+                            ).show()
+                            startActivity(Intent(this@UpdateProfileActivity, UserProfileActivity::class.java))
+                        }
+                    }
+                })
+        }
+
+        updateButtonProfile.setOnClickListener {
+            val birthDateInput = editBirthDate.text.toString().trim()
+            val nameInput = editTextName.text.toString().trim()
+
+            if (nameInput.isEmpty()) {
                 editTextName.error = "Name required"
                 editTextName.requestFocus()
                 return@setOnClickListener
             }
 
-            if (birthDate.isEmpty()) {
+            if (birthDateInput.isEmpty()) {
                 editBirthDate.error = "Name required"
                 editBirthDate.requestFocus()
                 return@setOnClickListener
             }
 
-            RetrofitClient.instance.updatePatient(id, name, birthDate)
+            RetrofitClient.instance.updatePatient(id, nameInput, birthDateInput)
                 .enqueue(object: Callback<DefaultResponse> {
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
                         Toast.makeText(applicationContext, "Internal App Error, try again letter or verify your connection", Toast.LENGTH_LONG).show()

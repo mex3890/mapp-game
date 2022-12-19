@@ -37,4 +37,16 @@
     <string name="create_button_text">Create</string>
     <string name="title_activity_game">GameActivity</string>
     <string name="update_profile_title">Update profile</string>
+    <string name="return_button">return button</string>
+    <string name="delete_button">delete button</string>
+    <string name="enter_with_crm_license_button">Enter with CRM license</string>
+    <string name="user_license_title">Enter with CRM license</string>
+    <string name="user_license_description_text">Your license can\'t have white spaces. His license will be consulted in the dependency of the national council of medicine</string>
+    <string name="license_text_hint">License Ex: CRM/RJ123456</string>
+    <string name="send_license_button_text">Send License</string>
+    <string name="after_send_your_license_you_re_automatically_redirect_to_make_login">After send your license, you\'re automatically redirect to make login</string>
+    <string name="add_new_patient">Add new patient</string>
+    <string name="user_email">Parent email</string>
+    <string name="search">Search</string>
+    <string name="search_patients_by_parent_email">Search patients by parent email</string>
 </resources>

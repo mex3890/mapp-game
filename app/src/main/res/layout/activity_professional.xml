@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/professionalPatientIndex"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryBackground"
     android:padding="16dp"
@@ -18,7 +19,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/profileButtonReturn"
+            android:id="@+id/professionalButtonReturn"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -26,15 +27,15 @@
             android:src="@drawable/return_icon" />
 
         <ImageButton
-            android:id="@+id/profileButtonAudio"
+            android:id="@+id/professionalButtonPatients"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/profiles_button_description"
-            android:src="@drawable/audio_icon" />
+            android:src="@drawable/profiles_icon" />
 
         <ImageButton
-            android:id="@+id/profileButtonHome"
+            android:id="@+id/professionalButtonHome"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
@@ -42,7 +43,7 @@
             android:src="@drawable/main_logo_icon" />
 
         <ImageButton
-            android:id="@+id/profileButtonProfile"
+            android:id="@+id/professionalButtonProfile"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -50,35 +51,54 @@
             android:src="@drawable/profile_icon" />
 
         <ImageButton
-            android:id="@+id/profileButtonDelete"
+            android:id="@+id/professionalButtonLogout"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/button_settings_description"
-            android:src="@drawable/trash_icon" />
+            android:src="@drawable/logout_icon" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/welcome_text_profile"
+        android:id="@+id/welcome_text_professional"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/navBar"
         android:layout_marginTop="20dp"
-        android:text="Welcome Professional"
+        android:text="@string/welcome"
         android:textAlignment="center"
         android:textColor="@color/colorFormBackground"
         android:textSize="20sp" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/welcome_text_profile"
-        android:layout_marginTop="142dp"
-        android:layout_marginBottom="142dp"
-        android:contentDescription="@string/mapp_game_logo_description"
-        app:srcCompat="@drawable/main_logo"
-        tools:ignore="ImageContrastCheck" />
+        android:layout_above="@+id/newProfileButton"
+        android:layout_below="@+id/welcome_text_professional"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:scrollbarThumbVertical="@android:color/holo_orange_light"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <LinearLayout
+            android:id="@+id/profileList"
+            android:layout_width="match_parent"
+            android:paddingHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/newProfileButton"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/colorPrimaryButton"
+        android:clickable="true"
+        android:text="@string/add_new_patient"
+        android:textColor="@color/colorFormBackground"
+        android:focusable="true" />
 
 
 </RelativeLayout>

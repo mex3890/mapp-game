@@ -124,6 +124,14 @@ class UpdateUserActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+        buttonSetLicense.setOnClickListener {
+            val intent = Intent(applicationContext, UserSetLicenseActivity::class.java)
+            if (user != null) {
+                intent.putExtra("id", user.id)
+            }
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {

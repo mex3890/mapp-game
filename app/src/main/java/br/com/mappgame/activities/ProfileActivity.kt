@@ -32,6 +32,12 @@ class ProfileActivity : AppCompatActivity() {
 
         textViewProfileWelcome.text = "Welcome, ".plus(profileName)
 
+        profileButtonProfiles.setOnClickListener {
+            val intent = Intent(applicationContext, UserProfileActivity::class.java)
+
+            startActivity(intent)
+        }
+
         profileButtonReturn.setOnClickListener {
             val intent = Intent(applicationContext, UserProfileActivity::class.java)
 

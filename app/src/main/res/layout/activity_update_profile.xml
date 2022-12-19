@@ -18,15 +18,15 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/profileCreateButtonReturn"
+            android:id="@+id/profileUpdateButtonReturn"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
-            android:contentDescription="@string/logout_button_description"
+            android:contentDescription="@string/return_button"
             android:src="@drawable/return_icon" />
 
         <ImageButton
-            android:id="@+id/profileCreateButtonProfiles"
+            android:id="@+id/profileUpdateButtonProfiles"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -34,7 +34,7 @@
             android:src="@drawable/profiles_icon" />
 
         <ImageButton
-            android:id="@+id/profileCreateButtonHome"
+            android:id="@+id/profileUpdateButtonHome"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
@@ -42,7 +42,7 @@
             android:src="@drawable/main_logo_icon" />
 
         <ImageButton
-            android:id="@+id/profileCreateButtonProfile"
+            android:id="@+id/profileUpdateButtonProfile"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -50,12 +50,12 @@
             android:src="@drawable/profile_icon" />
 
         <ImageButton
-            android:id="@+id/profileCreateButtonLogout"
+            android:id="@+id/profileUpdateButtonDelete"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
-            android:contentDescription="@string/button_settings_description"
-            android:src="@drawable/logout_icon" />
+            android:contentDescription="@string/delete_button"
+            android:src="@drawable/trash_icon" />
     </LinearLayout>
 
 

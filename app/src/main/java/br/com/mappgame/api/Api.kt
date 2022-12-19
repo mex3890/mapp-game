@@ -1,15 +1,11 @@
 package br.com.mappgame.api
 
-import br.com.mappgame.models.DefaultResponse
-import br.com.mappgame.models.LoginResponse
-import br.com.mappgame.models.PatientAnswersResponse
-import br.com.mappgame.models.UserPatientsIndexResponse
+import br.com.mappgame.models.*
 import retrofit2.Call
 import retrofit2.http.*
 import java.util.Date
 
 interface Api {
-
     @FormUrlEncoded
     @POST("register")
     fun registerUser(
@@ -74,4 +70,28 @@ interface Api {
         @Field("name") name: String,
         @Field("birth_date") birth_date: String
     ):Call<DefaultResponse>
+
+    @FormUrlEncoded
+    @POST("professionals/store/{user_id}")
+    fun storeLicense(
+        @Path("user_id") user_id: Int,
+        @Field("license") license: String
+    ):Call<DefaultResponse>
+
+    @GET("patients/email/{user_email}")
+    fun searchPatientsByUserEmail(
+        @Path("user_email") user_email: String
+    ):Call<ProfessionalSearchPatientsByEmailResponse>
+
+    @FormUrlEncoded
+    @POST("professionals/patient/store")
+    fun storePatientFromProfessional(
+        @Field("patient_id") patient_id: Int,
+        @Field("user_id") user_id: Int,
+    ):Call<DefaultResponse>
+
+    @GET("professionals/patients/{user_id}")
+    fun professionalPatients(
+        @Path("user_id") user_id: Int
+    ):Call<UserPatientsIndexResponse>
 }

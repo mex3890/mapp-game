@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryBackground"
     android:padding="16dp"
-    tools:context=".activities.UpdateUserActivity">
+    tools:context=".activities.UserSetLicenseActivity">
 
     <LinearLayout
         android:id="@+id/navBar"
@@ -18,7 +18,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/userUpdateButtonReturn"
+            android:id="@+id/userLicenseButtonReturn"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -26,7 +26,7 @@
             android:src="@drawable/return_icon" />
 
         <ImageButton
-            android:id="@+id/userUpdateButtonProfiles"
+            android:id="@+id/userLicenseButtonProfiles"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -34,7 +34,7 @@
             android:src="@drawable/profiles_icon" />
 
         <ImageButton
-            android:id="@+id/userUpdateButtonHome"
+            android:id="@+id/userLicenseButtonHome"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
@@ -42,7 +42,7 @@
             android:src="@drawable/main_logo_icon" />
 
         <ImageButton
-            android:id="@+id/userUpdateButtonProfile"
+            android:id="@+id/userLicenseButtonProfile"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -50,7 +50,7 @@
             android:src="@drawable/profile_icon" />
 
         <ImageButton
-            android:id="@+id/userUpdateButtonLogout"
+            android:id="@+id/userLicenseButtonLogout"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -64,8 +64,8 @@
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/navBar"
-        android:layout_marginTop="20dp"
-        android:text="@string/update_user_title"
+        android:layout_marginTop="40dp"
+        android:text="@string/user_license_title"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@color/colorFormBackground" />
@@ -76,56 +76,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/profileTitle"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
         android:background="@color/colorFormBackground"
         android:orientation="vertical"
         android:padding="10dp">
 
         <EditText
-            android:id="@+id/editTextName"
+            android:id="@+id/editTextLicense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="name"
             android:drawablePadding="5dp"
-            android:hint="@string/register_name_hint_text"
+            android:hint="@string/license_text_hint"
             android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="emailAddress"
-            android:drawablePadding="5dp"
-            android:hint="@string/register_email_hint_text"
-            android:inputType="textEmailAddress" />
-
-        <EditText
-            android:id="@+id/editTextPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="phone"
-            android:drawablePadding="5dp"
-            android:hint="@string/register_phone_hint_text"
-            android:inputType="phone" />
-
-        <EditText
-            android:id="@+id/editTextPasswordConfirmation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="password"
-            android:drawablePadding="5dp"
-            android:hint="@string/password_confirmation_hint"
-            android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/editTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="password"
-            android:drawablePadding="5dp"
-            android:hint="@string/register_password_hint_text"
-            android:inputType="textPassword" />
     </LinearLayout>
     <TextView
         android:id="@+id/textViewUpdate"
@@ -134,31 +99,31 @@
         android:layout_below="@id/linearLayout"
         android:layout_marginTop="11dp"
         android:lineSpacingExtra="7dp"
-        android:text="@string/redirect_on_update_user_text"
+        android:text="@string/user_license_description_text"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorFormBackground" />
 
     <Button
-        android:id="@+id/buttonUpdate"
+        android:id="@+id/buttonSendLicense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewUpdate"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:background="@color/colorPrimaryButton"
-        android:text="@string/update"
-        android:textAllCaps="false"
+        android:text="@string/send_license_button_text"
         android:textColor="@color/colorFormBackground" />
 
-    <Button
-        android:id="@+id/buttonSetLicense"
+    <TextView
+        android:id="@+id/textViewLicense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonUpdate"
-        android:layout_marginTop="15dp"
-        android:background="@color/colorPrimaryButton"
-        android:text="@string/enter_with_crm_license_button"
-        android:textAllCaps="false"
+        android:layout_below="@id/buttonSendLicense"
+        android:layout_marginTop="11dp"
+        android:lineSpacingExtra="7dp"
+        android:text="@string/after_send_your_license_you_re_automatically_redirect_to_make_login"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorFormBackground" />
 
 </RelativeLayout>
