@@ -1,27 +1,30 @@
 package br.com.mappgame.activities
 
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.graphics.Color
-import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.TypedValue
-import android.view.ViewGroup
-import android.widget.*
+import android.widget.Toast
 import br.com.mappgame.R
 import br.com.mappgame.api.RetrofitClient
 import br.com.mappgame.models.PatientAnswersResponse
-import br.com.mappgame.models.UserPatientsIndexResponse
-import kotlinx.android.synthetic.main.activity_user_profile.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DataViewActivity : AppCompatActivity() {
+import com.github.mikephil.charting.charts.BarChart
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.utils.ColorTemplate
+
+
+class DataViewPatientActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_data_view)
+        setContentView(R.layout.activity_data_view_patient)
+
+        // Obter uma referência para o gráfico de barras
+        val chart: BarChart = findViewById(R.id.chart)
 
         RetrofitClient.instance.patientAnswers(1)
             .enqueue(object : Callback<PatientAnswersResponse> {
@@ -62,5 +65,24 @@ class DataViewActivity : AppCompatActivity() {
                 }
 
             })
+
+        // Criar uma lista de entradas a partir do array de valores
+        val entries = ArrayList<BarEntry>()
+        for (i in hits.indices) {
+            entries.add(BarEntry(i.toFloat(), hits[i]))
+        }
+
+        // Criar um conjunto de dados a partir da lista de entradas
+        val dataSet = BarDataSet(entries, "Label")
+        dataSet.colors = ColorTemplate.COLORFUL_COLORS
+
+        // Criar um objeto de dados a partir do conjunto de dados
+        val data = BarData(dataSet)
+
+        // Atribuir os dados ao gráfico de barras
+        chart.data = data
+
+        // Atualizar o gráfico
+        chart.invalidate()
     }
 }
