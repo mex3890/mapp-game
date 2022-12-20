@@ -22,6 +22,11 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
         }
 
+        textViewForgotPassword.setOnClickListener {
+            val intent = Intent(applicationContext, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
         buttonLogin.setOnClickListener {
 
             val email = editTextEmail.text.toString().trim()

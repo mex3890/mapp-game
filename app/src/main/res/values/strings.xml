@@ -53,4 +53,5 @@
     <string name="ex_crm_rj123456">Ex: CRM/RJ123456</string>
     <string name="state">State</string>
     <string name="update_professional">Update Professional</string>
+    <string name="forgot_your_password_click_here">Forgot your password? Click here!</string>
 </resources>
