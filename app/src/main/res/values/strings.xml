@@ -54,4 +54,8 @@
     <string name="state">State</string>
     <string name="update_professional">Update Professional</string>
     <string name="forgot_your_password_click_here">Forgot your password? Click here!</string>
+    <string name="e_mail_confirmation">E-mail confirmation</string>
+    <string name="an_email_will_be_sent_to_you_check_and_get_your_temporary_password">An email will be sent to you, check and get your temporary password</string>
+    <string name="send">Send E-mail</string>
+    <string name="forgot_password">Forgot Password</string>
 </resources>

@@ -111,4 +111,10 @@ interface Api {
         @Field("password_confirmation") password_confirmation: String,
         @Field("password") password: String
     ):Call<DefaultResponse>
+
+    @FormUrlEncoded
+    @POST("forgot_password")
+    fun forgotPassword(
+        @Field("email") email: String
+    ):Call<DefaultResponse>
 }
