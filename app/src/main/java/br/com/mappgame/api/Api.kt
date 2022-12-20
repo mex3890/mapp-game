@@ -94,4 +94,21 @@ interface Api {
     fun professionalPatients(
         @Path("user_id") user_id: Int
     ):Call<UserPatientsIndexResponse>
+
+    @GET("professionals/{professional_id}")
+    fun getProfessional(
+        @Path("professional_id") professional_id: Int
+    ):Call<ProfessionalShowResponse>
+
+    @FormUrlEncoded
+    @PUT("professionals/{user_id}")
+    fun storeProfessional(
+        @Path("user_id") user_id: Int,
+        @Field("name") name: String,
+        @Field("email") email: String,
+        @Field("phone") phone: String,
+        @Field("license") license: String,
+        @Field("password_confirmation") password_confirmation: String,
+        @Field("password") password: String
+    ):Call<DefaultResponse>
 }

@@ -31,6 +31,7 @@
     <string name="update_user_title">Update User</string>
     <string name="update">Update</string>
     <string name="redirect_on_update_user_text">If you update your account password, you will be redirected to login</string>
+    <string name="redirect_on_update_professional_text">If you update your account password or CRM, you will be redirected to login</string>
     <string name="password_confirmation_hint">Password confirmation</string>
     <string name="create_profile_title">Create profile</string>
     <string name="birth_date_hint">Birth Date</string>
@@ -49,4 +50,7 @@
     <string name="user_email">Parent email</string>
     <string name="search">Search</string>
     <string name="search_patients_by_parent_email">Search patients by parent email</string>
+    <string name="ex_crm_rj123456">Ex: CRM/RJ123456</string>
+    <string name="state">State</string>
+    <string name="update_professional">Update Professional</string>
 </resources>

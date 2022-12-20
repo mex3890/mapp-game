@@ -16,6 +16,7 @@ import br.com.mappgame.storage.SharedPrefManager
 import kotlinx.android.synthetic.main.activity_professional.*
 import kotlinx.android.synthetic.main.activity_professional.newProfileButton
 import kotlinx.android.synthetic.main.activity_professional.profileList
+import kotlinx.android.synthetic.main.activity_professional_show_patient.*
 import kotlinx.android.synthetic.main.activity_user_profile.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,6 +26,8 @@ class ProfessionalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_professional)
+
+        val professional = SharedPrefManager.getInstance(applicationContext).user
 
         professionalButtonReturn.setOnClickListener {
             SharedPrefManager.getInstance(this).clear()
@@ -38,6 +41,14 @@ class ProfessionalActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, LoginActivity::class.java)
             intent.flags = 0
             startActivity(intent)
+        }
+
+        professionalButtonProfile.setOnClickListener {
+                val intent = Intent(applicationContext, ProfessionalUpdate::class.java)
+            if (professional != null) {
+                intent.putExtra("id", professional.id)
+            }
+                startActivity(intent)
         }
 
         newProfileButton.setOnClickListener {
@@ -111,7 +122,7 @@ class ProfessionalActivity : AppCompatActivity() {
 
                                     button.setOnClickListener {
                                         val intent =
-                                            Intent(applicationContext, ProfileActivity::class.java)
+                                            Intent(applicationContext, ProfessionalShowPatient::class.java)
                                         intent.putExtra("name", element.name)
                                         intent.putExtra("id", element.id)
                                         intent.putExtra("birthDate", element.birth_date)

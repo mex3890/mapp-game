@@ -21,6 +21,11 @@ class CreateNewProfile : AppCompatActivity() {
 
         val userId = intent.getIntExtra("userId", 1)
 
+        profileCreateButtonReturn.setOnClickListener {
+            val intent = Intent(applicationContext, UserProfileActivity::class.java)
+            startActivity(intent)
+        }
+
         buttonCreate.setOnClickListener {
             val name = editTextName.text.toString().trim()
             val birthDate = editBirthDate.text.toString().trim()

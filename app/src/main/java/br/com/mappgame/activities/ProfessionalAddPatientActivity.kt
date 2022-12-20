@@ -1,5 +1,6 @@
 package br.com.mappgame.activities
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -12,7 +13,7 @@ import br.com.mappgame.api.RetrofitClient
 import br.com.mappgame.models.DefaultResponse
 import br.com.mappgame.models.ProfessionalSearchPatientsByEmailResponse
 import br.com.mappgame.storage.SharedPrefManager
-import kotlinx.android.synthetic.main.activity_professional_search_patient.*
+import kotlinx.android.synthetic.main.activity_professional_add_patient.*
 import kotlinx.android.synthetic.main.activity_update_user.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,7 +22,7 @@ import retrofit2.Response
 class ProfessionalAddPatientActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_professional_search_patient)
+        setContentView(R.layout.activity_professional_add_patient)
 
         buttonSearch.setOnClickListener {
             val userEmail = editTextUserEmail.text.toString().trim()
@@ -118,6 +119,29 @@ class ProfessionalAddPatientActivity : AppCompatActivity() {
                         }
                     }
                 })
+        }
+
+        professionalButtonReturn.setOnClickListener {
+            val intent = Intent(applicationContext, ProfessionalActivity::class.java)
+            startActivity(intent)
+        }
+
+        professionalButtonPatients.setOnClickListener {
+            val intent = Intent(applicationContext, ProfessionalActivity::class.java)
+            startActivity(intent)
+        }
+
+        professionalButtonProfile.setOnClickListener {
+            val intent = Intent(applicationContext, ProfessionalUpdate::class.java)
+            startActivity(intent)
+        }
+
+        professionalButtonLogout.setOnClickListener {
+            SharedPrefManager.getInstance(applicationContext).clear()
+            val intent = Intent(applicationContext, LoginActivity::class.java)
+            intent.flags = 0
+
+            startActivity(intent)
         }
     }
 
