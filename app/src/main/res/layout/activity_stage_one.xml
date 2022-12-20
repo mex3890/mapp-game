@@ -50,7 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/bola"
+        app:srcCompat="@drawable/ball"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -64,7 +64,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@drawable/bicicleta"
+        app:srcCompat="@drawable/house"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -78,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.751"
-        app:srcCompat="@drawable/carro"
+        app:srcCompat="@drawable/tree"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -92,7 +92,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.751"
-        app:srcCompat="@drawable/skate"
+        app:srcCompat="@drawable/key"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
