@@ -54,12 +54,12 @@
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
-            android:contentDescription="@string/button_settings_description"
+            android:contentDescription="@string/button_delete_profile"
             android:src="@drawable/trash_icon" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/welcome_text_profile"
+        android:id="@+id/text_name_patient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/navBar"
@@ -73,7 +73,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/welcome_text_profile"
+        android:layout_below="@+id/text_name_patient"
         android:layout_marginTop="142dp"
         android:layout_marginBottom="142dp"
         android:contentDescription="@string/mapp_game_logo_description"

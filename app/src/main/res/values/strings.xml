@@ -27,6 +27,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome">Welcome</string>
+    <string name="welcome_professional">Welcome professional</string>
     <string name="profile_play_button">Play</string>
     <string name="update_user_title">Update User</string>
     <string name="update">Update</string>
@@ -58,4 +59,5 @@
     <string name="an_email_will_be_sent_to_you_check_and_get_your_temporary_password">An email will be sent to you, check and get your temporary password</string>
     <string name="send">Send E-mail</string>
     <string name="forgot_password">Forgot Password</string>
+    <string name="button_delete_profile">button_delete_profile</string>
 </resources>

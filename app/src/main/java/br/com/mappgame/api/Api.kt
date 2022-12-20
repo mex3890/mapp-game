@@ -117,4 +117,11 @@ interface Api {
     fun forgotPassword(
         @Field("email") email: String
     ):Call<DefaultResponse>
+
+    @FormUrlEncoded
+    @POST("professionals/patient/destroy")
+    fun deletePatientProfessionalRelation(
+        @Field("patient_id") patient_id: Int,
+        @Field("user_id") user_id: Int
+    ):Call<DefaultResponse>
 }
