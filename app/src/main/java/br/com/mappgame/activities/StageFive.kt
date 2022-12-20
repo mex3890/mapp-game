@@ -18,7 +18,9 @@ class StageFive : AppCompatActivity() {
         setContentView(R.layout.activity_stage_five)
 
         var patient_id = intent.getIntExtra("patient_id", 0)
-
+        val profileName = intent.getStringExtra("profileName")
+        val profileBirthDate = intent.getStringExtra("profileBirthDate")
+        val patientUserId = intent.getIntExtra("patientUserID", 0)
         var answers = intent.getStringExtra("questionValue")
 
 
@@ -44,6 +46,16 @@ class StageFive : AppCompatActivity() {
         nextStageT.setOnClickListener {
             answers = answers.plus("l5:o4")
             nextStage(answers!!, patient_id)
+        }
+
+        val profileButtonReturn = findViewById<ImageButton>(R.id.profileButtonReturn)
+        profileButtonReturn.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("id", patient_id)
+            intent.putExtra("name", profileName)
+            intent.putExtra("birthdate", profileBirthDate.toString())
+            intent.putExtra("userID", patientUserId)
+            startActivity(intent)
         }
 
     }
