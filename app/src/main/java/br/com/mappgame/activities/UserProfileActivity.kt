@@ -68,6 +68,7 @@ class UserProfileActivity : AppCompatActivity() {
                                     label.setTextColor(Color.parseColor("#FFFFFF"))
                                     label.minWidth = view.measuredWidth - 350
                                     label.setTextSize(TypedValue.COMPLEX_UNIT_PX, 50F)
+                                    label.maxLines = 1
 
                                     button.layoutParams = LinearLayout.LayoutParams(
                                         LinearLayout.LayoutParams.WRAP_CONTENT,

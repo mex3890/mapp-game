@@ -18,7 +18,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/userUpdateButtonReturn"
+            android:id="@+id/profileCreateButtonReturn"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -26,7 +26,7 @@
             android:src="@drawable/return_icon" />
 
         <ImageButton
-            android:id="@+id/userUpdateButtonProfiles"
+            android:id="@+id/profileCreateButtonProfiles"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -34,7 +34,7 @@
             android:src="@drawable/profiles_icon" />
 
         <ImageButton
-            android:id="@+id/userUpdateButtonHome"
+            android:id="@+id/profileCreateButtonHome"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
@@ -42,7 +42,7 @@
             android:src="@drawable/main_logo_icon" />
 
         <ImageButton
-            android:id="@+id/userUpdateButtonProfile"
+            android:id="@+id/profileCreateButtonProfile"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
@@ -50,7 +50,7 @@
             android:src="@drawable/profile_icon" />
 
         <ImageButton
-            android:id="@+id/userUpdateButtonLogout"
+            android:id="@+id/profileCreateButtonLogout"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"

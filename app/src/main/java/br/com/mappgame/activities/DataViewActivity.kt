@@ -43,13 +43,13 @@ class DataViewActivity : AppCompatActivity() {
 
                     if (code == 200) {
 
-                        val answers =  response.body()?.answers
-                        val hits = answers?.get(0)?.hits
-                        val errors = answers?.get(0)?.errors
-                        val date = answers?.get(0)?.created_at
-
-                        Toast.makeText(applicationContext,
-                            hits.toString(), Toast.LENGTH_LONG).show()
+//                        val answers =  response.body()?.answers
+//                        val hits = answers?.get(0)?.hits
+//                        val errors = answers?.get(0)?.errors
+//                        val date = answers?.get(0)?.created_at
+//
+//                        Toast.makeText(applicationContext,
+//                            hits.toString(), Toast.LENGTH_LONG).show()
                     }
 
 

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/professional_search"
+    android:background="@color/colorPrimaryBackground"
+    android:padding="16dp"
+    tools:context=".activities.ProfessionalAddPatientActivity">
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimaryButton"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/professionalButtonReturn"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/logout_button_description"
+            android:src="@drawable/return_icon" />
+
+        <ImageButton
+            android:id="@+id/professionalButtonPatients"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/profiles_button_description"
+            android:src="@drawable/profiles_icon" />
+
+        <ImageButton
+            android:id="@+id/professionalButtonHome"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/home_button_description"
+            android:src="@drawable/main_logo_icon" />
+
+        <ImageButton
+            android:id="@+id/professionalButtonProfile"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_profile_description"
+            android:src="@drawable/profile_icon" />
+
+        <ImageButton
+            android:id="@+id/professionalButtonLogout"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_settings_description"
+            android:src="@drawable/logout_icon" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/welcome_text_professional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navBar"
+        android:layout_marginTop="20dp"
+        android:text="@string/search_patients_by_parent_email"
+        android:textAlignment="center"
+        android:textColor="@color/colorFormBackground"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome_text_professional"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorFormBackground"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/editTextUserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:autofillHints="name"
+            android:drawablePadding="5dp"
+            android:hint="@string/user_email"
+            android:inputType="textEmailAddress" />
+
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimaryButton"
+            android:text="@string/search"
+            android:textColor="@color/colorFormBackground" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:scrollbarThumbVertical="@android:color/holo_orange_light"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <LinearLayout
+            android:id="@+id/viewPatientList"
+            android:layout_width="match_parent"
+            android:paddingHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</RelativeLayout>

@@ -26,12 +26,12 @@
             android:src="@drawable/return_icon" />
 
         <ImageButton
-            android:id="@+id/profileButtonAudio"
+            android:id="@+id/profileButtonProfiles"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/profiles_button_description"
-            android:src="@drawable/audio_icon" />
+            android:src="@drawable/profiles_icon" />
 
         <ImageButton
             android:id="@+id/profileButtonHome"
@@ -50,12 +50,12 @@
             android:src="@drawable/profile_icon" />
 
         <ImageButton
-            android:id="@+id/profileButtonSettings"
+            android:id="@+id/profileButtonDelete"
             android:layout_width="66dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/button_settings_description"
-            android:src="@drawable/settings_icon" />
+            android:src="@drawable/trash_icon" />
     </LinearLayout>
 
     <TextView
