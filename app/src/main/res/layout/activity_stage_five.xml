@@ -7,13 +7,44 @@
     android:layout_height="match_parent"
     tools:context=".activities.StageFive">
 
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="193dp"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryButton"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023">
+
+        <ImageButton
+            android:id="@+id/profileButtonReturn"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/logout_button_description"
+            android:src="@drawable/return_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonHome"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/home_button_description"
+            android:src="@drawable/main_logo_icon" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textViewQuestionFive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Question five"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="34sp"
+        android:text="Qual estrela é azul?"
+        android:textColor="@color/colorFormBackground"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,53 +54,55 @@
 
     <ImageButton
         android:id="@+id/imageButton17"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519"
-        app:srcCompat="@drawable/ic_launcher_background"
+        app:srcCompat="@drawable/yellow_star"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton18"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintHorizontal_bias="0.824"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519"
-        app:srcCompat="@drawable/ic_launcher_background"
+        app:srcCompat="@drawable/green_star"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton19"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.744"
-        app:srcCompat="@drawable/ic_launcher_background"
+        app:layout_constraintVertical_bias="0.762"
+        app:srcCompat="@drawable/blue_star"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton20"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintHorizontal_bias="0.824"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.744"
-        app:srcCompat="@drawable/ic_launcher_background"
+        app:layout_constraintVertical_bias="0.762"
+        app:srcCompat="@drawable/red_star"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

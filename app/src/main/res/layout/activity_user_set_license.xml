@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_profiles_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryBackground"
+    android:padding="16dp"
+    tools:context=".activities.UserSetLicenseActivity">
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimaryButton"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/userLicenseButtonReturn"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/logout_button_description"
+            android:src="@drawable/return_icon" />
+
+        <ImageButton
+            android:id="@+id/userLicenseButtonProfiles"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/profiles_button_description"
+            android:src="@drawable/profiles_icon" />
+
+        <ImageButton
+            android:id="@+id/userLicenseButtonHome"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/home_button_description"
+            android:src="@drawable/main_logo_icon" />
+
+        <ImageButton
+            android:id="@+id/userLicenseButtonProfile"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_profile_description"
+            android:src="@drawable/profile_icon" />
+
+        <ImageButton
+            android:id="@+id/userLicenseButtonLogout"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_settings_description"
+            android:src="@drawable/logout_icon" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/profileTitle"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navBar"
+        android:layout_marginTop="40dp"
+        android:text="@string/user_license_title"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        android:textColor="@color/colorFormBackground" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileTitle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorFormBackground"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/editTextLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:drawablePadding="5dp"
+            android:hint="@string/license_text_hint"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textViewUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_marginTop="11dp"
+        android:lineSpacingExtra="7dp"
+        android:text="@string/user_license_description_text"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorFormBackground" />
+
+    <Button
+        android:id="@+id/buttonSendLicense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewUpdate"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorPrimaryButton"
+        android:text="@string/send_license_button_text"
+        android:textColor="@color/colorFormBackground" />
+
+    <TextView
+        android:id="@+id/textViewLicense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonSendLicense"
+        android:layout_marginTop="11dp"
+        android:lineSpacingExtra="7dp"
+        android:text="@string/after_send_your_license_you_re_automatically_redirect_to_make_login"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorFormBackground" />
+
+</RelativeLayout>

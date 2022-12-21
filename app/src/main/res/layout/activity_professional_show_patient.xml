@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/showView"
+    android:background="@color/colorPrimaryBackground"
+    android:padding="16dp"
+    tools:context=".activities.ProfessionalShowPatient">
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimaryButton"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/profileButtonReturn"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/logout_button_description"
+            android:src="@drawable/return_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonProfiles"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/profiles_button_description"
+            android:src="@drawable/profiles_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonHome"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/home_button_description"
+            android:src="@drawable/main_logo_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonPdf"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_pdf_description"
+            android:src="@drawable/pdf_icon" />
+
+        <ImageButton
+            android:id="@+id/profileButtonDelete"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:background="@color/colorPrimaryButton"
+            android:contentDescription="@string/button_delete_profile"
+            android:src="@drawable/trash_icon" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_name_patient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navBar"
+        android:layout_marginTop="10dp"
+        android:text="@string/welcome"
+        android:textAlignment="center"
+        android:textColor="@color/colorFormBackground"
+        android:textSize="20sp" />
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:layout_below="@+id/text_name_patient"
+        android:layout_marginTop="5dp"
+        android:id="@+id/graph" />
+
+    <TextView
+        android:id="@+id/text_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/graph"
+        android:layout_marginTop="20dp"
+        android:text="@string/you_can_scrolling_the_graph_if_have_many_data"
+        android:textAlignment="center"
+        android:textColor="@color/colorFormBackground"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/filters"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/filterWithErrors"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimaryButton"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/with_errors"
+            android:textColor="@color/colorFormBackground" />
+
+        <Button
+            android:id="@+id/filterWithHits"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryButton"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/with_hits"
+            android:textColor="@color/colorFormBackground" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/filters2"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/filterLastFive"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimaryButton"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/last_five"
+            android:textColor="@color/colorFormBackground" />
+
+        <Button
+            android:id="@+id/filterAll"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryButton"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/all"
+            android:textColor="@color/colorFormBackground" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/filtersInputView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/filters2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/count_per_view_area"
+            android:textColor="@color/colorFormBackground"
+            android:layout_marginEnd="5dp"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextPerViewCount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:hint="@string/empty"
+            android:importantForAutofill="no"
+            android:background="@color/colorFormBackground"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/buttonSetPerView"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:text="@string/go" />
+
+    </LinearLayout>
+
+</RelativeLayout>

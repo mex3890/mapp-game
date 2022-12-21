@@ -83,7 +83,7 @@ class UpdateUserActivity : AppCompatActivity() {
 
                             if (response.code() == 200) {
                                 val intent = Intent(applicationContext, UserProfileActivity::class.java)
-                                SharedPrefManager.getInstance(applicationContext).saveUser(User(user.id, email, name, phone))
+                                SharedPrefManager.getInstance(applicationContext).saveUser(User(user.id, email, name, phone, 1))
                                 startActivity(intent)
                             }
 
@@ -122,6 +122,14 @@ class UpdateUserActivity : AppCompatActivity() {
         userUpdateButtonReturn.setOnClickListener {
             val intent = Intent(applicationContext, UserProfileActivity::class.java)
 
+            startActivity(intent)
+        }
+
+        buttonSetLicense.setOnClickListener {
+            val intent = Intent(applicationContext, UserSetLicenseActivity::class.java)
+            if (user != null) {
+                intent.putExtra("id", user.id)
+            }
             startActivity(intent)
         }
     }

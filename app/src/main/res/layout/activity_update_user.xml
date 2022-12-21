@@ -20,7 +20,7 @@
         <ImageButton
             android:id="@+id/userUpdateButtonReturn"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/logout_button_description"
             android:src="@drawable/return_icon" />
@@ -28,7 +28,7 @@
         <ImageButton
             android:id="@+id/userUpdateButtonProfiles"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/profiles_button_description"
             android:src="@drawable/profiles_icon" />
@@ -36,7 +36,7 @@
         <ImageButton
             android:id="@+id/userUpdateButtonHome"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryDark"
             android:contentDescription="@string/home_button_description"
             android:src="@drawable/main_logo_icon" />
@@ -44,7 +44,7 @@
         <ImageButton
             android:id="@+id/userUpdateButtonProfile"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/button_profile_description"
             android:src="@drawable/profile_icon" />
@@ -52,7 +52,7 @@
         <ImageButton
             android:id="@+id/userUpdateButtonLogout"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/button_settings_description"
             android:src="@drawable/logout_icon" />
@@ -64,7 +64,7 @@
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/navBar"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="20dp"
         android:text="@string/update_user_title"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/profileTitle"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="20dp"
         android:background="@color/colorFormBackground"
         android:orientation="vertical"
@@ -144,9 +144,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewUpdate"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="20dp"
         android:background="@color/colorPrimaryButton"
         android:text="@string/update"
+        android:textAllCaps="false"
+        android:textColor="@color/colorFormBackground" />
+
+    <Button
+        android:id="@+id/buttonSetLicense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonUpdate"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimaryButton"
+        android:text="@string/enter_with_crm_license_button"
         android:textAllCaps="false"
         android:textColor="@color/colorFormBackground" />
 

@@ -20,7 +20,7 @@
         <ImageButton
             android:id="@+id/userButtonReturn"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/logout_button_description"
             android:src="@drawable/return_icon" />
@@ -28,7 +28,7 @@
         <ImageButton
             android:id="@+id/userButtonProfiles"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/profiles_button_description"
             android:src="@drawable/profiles_icon" />
@@ -36,7 +36,7 @@
         <ImageButton
             android:id="@+id/userButtonHome"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryDark"
             android:contentDescription="@string/home_button_description"
             android:src="@drawable/main_logo_icon" />
@@ -44,7 +44,7 @@
         <ImageButton
             android:id="@+id/userButtonProfile"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/button_profile_description"
             android:src="@drawable/profile_icon" />
@@ -52,7 +52,7 @@
         <ImageButton
             android:id="@+id/userButtonLogout"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/button_settings_description"
             android:src="@drawable/logout_icon" />
@@ -70,16 +70,23 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@color/colorFormBackground" />
 
-    <LinearLayout
-        android:id="@+id/profileList"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/newProfileButton"
         android:layout_below="@+id/profileTitle"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:orientation="vertical">
-    </LinearLayout>
+        android:scrollbarThumbVertical="@android:color/holo_orange_light"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <LinearLayout
+            android:id="@+id/profileList"
+            android:layout_width="match_parent"
+            android:paddingHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
     <Button
         android:id="@+id/newProfileButton"
