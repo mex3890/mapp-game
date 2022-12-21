@@ -1,6 +1,7 @@
 package br.com.mappgame.api
 
 import br.com.mappgame.models.*
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 import java.util.Date
@@ -124,4 +125,10 @@ interface Api {
         @Field("patient_id") patient_id: Int,
         @Field("user_id") user_id: Int
     ):Call<DefaultResponse>
+
+    @GET("download/pdf/{patient_id}/{user_id}")
+    fun downloadAnswersPdf(
+        @Path("patient_id") patient_id: Int,
+        @Path("user_id") user_id: Int
+    ):Call<ResponseBody>
 }

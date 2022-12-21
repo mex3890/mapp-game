@@ -104,7 +104,6 @@ class ProfessionalAddPatientActivity : AppCompatActivity() {
                                 button.setTypeface(null, Typeface.BOLD)
 
                                 button.setOnClickListener {
-                                    Toast.makeText(applicationContext, element.id.toString(), Toast.LENGTH_LONG).show()
                                     horizontalLayout.removeAllViews()
                                     if (user != null) {
                                         addingPatientToProfessional(element.id, user.id)

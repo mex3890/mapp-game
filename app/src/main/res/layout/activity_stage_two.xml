@@ -23,7 +23,7 @@
         <ImageButton
             android:id="@+id/profileButtonReturn"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/logout_button_description"
             android:src="@drawable/return_icon" />
@@ -92,7 +92,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.757"
-        app:srcCompat="@drawable/formiga"
+        app:srcCompat="@drawable/gato"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -106,6 +106,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.757"
-        app:srcCompat="@drawable/gato"
+        app:srcCompat="@drawable/formiga"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

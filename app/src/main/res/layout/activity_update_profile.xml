@@ -20,7 +20,7 @@
         <ImageButton
             android:id="@+id/profileUpdateButtonReturn"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/return_button"
             android:src="@drawable/return_icon" />
@@ -28,7 +28,7 @@
         <ImageButton
             android:id="@+id/profileUpdateButtonProfiles"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/profiles_button_description"
             android:src="@drawable/profiles_icon" />
@@ -36,7 +36,7 @@
         <ImageButton
             android:id="@+id/profileUpdateButtonHome"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryDark"
             android:contentDescription="@string/home_button_description"
             android:src="@drawable/main_logo_icon" />
@@ -44,7 +44,7 @@
         <ImageButton
             android:id="@+id/profileUpdateButtonProfile"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/button_profile_description"
             android:src="@drawable/profile_icon" />
@@ -52,7 +52,7 @@
         <ImageButton
             android:id="@+id/profileUpdateButtonDelete"
             android:layout_width="66dp"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:background="@color/colorPrimaryButton"
             android:contentDescription="@string/delete_button"
             android:src="@drawable/trash_icon" />

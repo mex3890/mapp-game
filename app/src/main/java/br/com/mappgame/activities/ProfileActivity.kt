@@ -80,13 +80,6 @@ class ProfileActivity : AppCompatActivity() {
                                 call: Call<DefaultResponse>,
                                 response: Response<DefaultResponse>
                             ) {
-
-                                Toast.makeText(
-                                    applicationContext,
-                                    response.code().toString(),
-                                    Toast.LENGTH_LONG
-                                ).show()
-
                                 if (response.code() == 202) {
                                     Toast.makeText(
                                         applicationContext,

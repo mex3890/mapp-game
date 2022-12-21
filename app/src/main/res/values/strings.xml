@@ -60,4 +60,15 @@
     <string name="send">Send E-mail</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="button_delete_profile">button_delete_profile</string>
+    <string name="you_can_scrolling_the_graph_if_have_many_data">You can scrolling the graph if have many data!</string>
+    <string name="with_errors">WITH ERRORS</string>
+    <string name="all">ALL</string>
+    <string name="last_five">LAST FIVE</string>
+    <string name="with_hits">WITH HITS</string>
+    <string name="pdf">PDF</string>
+    <string name="button_pdf_description">button_pdf_description</string>
+    <string name="count_per_view">Count per view</string>
+    <string name="empty" />
+    <string name="go">GO</string>
+    <string name="count_per_view_area">Count per view area</string>
 </resources>

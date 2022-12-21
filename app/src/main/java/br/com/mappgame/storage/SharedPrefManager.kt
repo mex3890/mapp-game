@@ -29,6 +29,20 @@ class SharedPrefManager private constructor(private val mCtx: Context) {
             }
         }
 
+    val countPerAreaViewGraph: Int?
+    get() {
+        val sharedPreferences =
+            mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
+        return sharedPreferences.getInt("count", 10)
+    }
+
+    fun savePerAreaViewGraphValue(count: Int) {
+        val sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putInt("count", count)
+        editor.apply()
+    }
 
     fun saveUser(user: User) {
 
@@ -42,7 +56,6 @@ class SharedPrefManager private constructor(private val mCtx: Context) {
         editor.putInt("role", user.role)
 
         editor.apply()
-
     }
 
     fun clear() {
