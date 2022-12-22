@@ -124,7 +124,7 @@
             android:layout_height="wrap_content"
             android:autofillHints="password"
             android:drawablePadding="5dp"
-            android:hint="@string/register_password_hint_text"
+            android:hint="@string/new_password"
             android:inputType="textPassword" />
     </LinearLayout>
     <TextView

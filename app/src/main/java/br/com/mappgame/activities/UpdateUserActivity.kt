@@ -89,7 +89,7 @@ class UpdateUserActivity : AppCompatActivity() {
 
                             if (response.code() == 201) {
                                 SharedPrefManager.getInstance(applicationContext).clear()
-                                val intent = Intent(applicationContext, LoginActivity::class.java)
+                                val intent = Intent(applicationContext, MainActivity::class.java)
                                 intent.flags = 0
                                 startActivity(intent)
                                 Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
@@ -113,7 +113,7 @@ class UpdateUserActivity : AppCompatActivity() {
 
         userUpdateButtonLogout.setOnClickListener {
             SharedPrefManager.getInstance(this).clear()
-            val intent = Intent(applicationContext, LoginActivity::class.java)
+            val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = 0
 
             startActivity(intent)
@@ -138,7 +138,7 @@ class UpdateUserActivity : AppCompatActivity() {
         super.onStart()
 
         if (!SharedPrefManager.getInstance(this).isLoggedIn) {
-            val intent = Intent(applicationContext, LoginActivity::class.java)
+            val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
             startActivity(intent)

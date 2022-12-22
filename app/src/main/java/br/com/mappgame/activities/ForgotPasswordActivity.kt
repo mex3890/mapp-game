@@ -79,7 +79,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
                                 response.body()?.message,
                                 Toast.LENGTH_LONG
                             ).show()
-                            val intent = Intent(applicationContext, LoginActivity::class.java)
+                            val intent = Intent(applicationContext, MainActivity::class.java)
                             startActivity(intent)
                         }
                     }

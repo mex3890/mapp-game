@@ -157,7 +157,7 @@ class ProfessionalUpdate : AppCompatActivity() {
 
                             if (response.code() == 201) {
                                 SharedPrefManager.getInstance(applicationContext).clear()
-                                val intent = Intent(applicationContext, LoginActivity::class.java)
+                                val intent = Intent(applicationContext, MainActivity::class.java)
                                 intent.flags = 0
                                 startActivity(intent)
                                 Toast.makeText(
@@ -178,7 +178,7 @@ class ProfessionalUpdate : AppCompatActivity() {
 
         professionalUpdateButtonLogout.setOnClickListener {
             SharedPrefManager.getInstance(this).clear()
-            val intent = Intent(applicationContext, LoginActivity::class.java)
+            val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = 0
 
             startActivity(intent)

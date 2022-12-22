@@ -10,7 +10,7 @@ object RetrofitClient {
     private val AUTH = "Basic " + Base64.encodeToString("belalkhan:123456".toByteArray(), Base64.NO_WRAP)
 
     // The API URL need finish in '/' like: https://c86b-2804-14d-5cd5-42b0-2889-e0d9-cf9-1047.sa.ngrok.io/api/
-    private const val BASE_URL = "https://7084-2804-14d-5cd5-43a4-1d5c-e838-5b5d-8c95.sa.ngrok.io/api/"
+    private const val BASE_URL = "https://fa8f-2804-14d-5cd5-43a4-7853-de84-301f-6e2f.sa.ngrok.io/api/"
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor { chain ->

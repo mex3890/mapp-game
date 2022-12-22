@@ -4,28 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryBackground"
     android:padding="16dp"
-    tools:context=".activities.LoginActivity">
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="60dp"
-        android:contentDescription="@string/mapp_game_logo_description"
-        app:srcCompat="@drawable/main_logo"
-        tools:ignore="ImageContrastCheck" />
+    android:background="@color/colorPrimaryBackground"
+    tools:context=".activities.RegisterActivity">
 
     <TextView
-        android:id="@+id/loginTitle"
-        android:layout_width="379dp"
+        android:id="@+id/registerTitle"
+        android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_marginTop="32dp"
-        android:text="@string/login_title"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="85dp"
+        android:text="@string/register_title"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@color/colorFormBackground" />
@@ -34,13 +23,22 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginTitle"
+        android:layout_below="@+id/registerTitle"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="61dp"
         android:layout_marginRight="20dp"
         android:background="@color/colorFormBackground"
         android:orientation="vertical"
         android:padding="10dp">
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:drawablePadding="5dp"
+            android:hint="@string/register_name_hint_text"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editTextEmail"
@@ -48,55 +46,52 @@
             android:layout_height="wrap_content"
             android:autofillHints="emailAddress"
             android:drawablePadding="5dp"
-            android:hint="@string/login_email_hint_text"
+            android:hint="@string/register_email_hint_text"
             android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="phone"
+            android:drawablePadding="5dp"
+            android:hint="@string/register_phone_hint_text"
+            android:inputType="phone" />
 
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="Password"
+            android:autofillHints="password"
             android:drawablePadding="5dp"
-            android:hint="@string/login_password_hint_text"
+            android:hint="@string/register_password_hint_text"
             android:inputType="textPassword" />
 
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textViewRegister"
+        android:id="@+id/textViewLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout"
+        android:layout_below="@id/linearLayout"
         android:layout_marginTop="11dp"
         android:lineSpacingExtra="7dp"
-        android:text="@string/login_redirect_link_to_register"
+        android:text="@string/register_redirect_to_login_link"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorFormBackground" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewRegister"
+        android:layout_below="@+id/textViewLogin"
         android:layout_marginTop="28dp"
+        android:layout_marginBottom="50dp"
         android:background="@color/colorPrimaryButton"
-        android:ellipsize="none"
-        android:text="@string/login_button_label"
+        android:text="@string/register_button_label"
         android:textAllCaps="false"
-        android:textColor="@color/colorFormBackground" />
-
-    <TextView
-        android:id="@+id/textViewForgotPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonLogin"
-        android:layout_marginTop="11dp"
-        android:lineSpacingExtra="7dp"
-        android:text="@string/forgot_your_password_click_here"
-        android:textAlignment="center"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorFormBackground" />
 
 </RelativeLayout>

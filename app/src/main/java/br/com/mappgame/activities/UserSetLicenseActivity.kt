@@ -38,7 +38,7 @@ class UserSetLicenseActivity : AppCompatActivity() {
 
         userLicenseButtonLogout.setOnClickListener {
             SharedPrefManager.getInstance(applicationContext).clear()
-            val intent = Intent(applicationContext, LoginActivity::class.java)
+            val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = 0
 
             startActivity(intent)
@@ -86,7 +86,7 @@ class UserSetLicenseActivity : AppCompatActivity() {
 
                         if (response.code() == 200) {
                             SharedPrefManager.getInstance(applicationContext).clear()
-                            val intent = Intent(applicationContext, LoginActivity::class.java)
+                            val intent = Intent(applicationContext, MainActivity::class.java)
                             intent.flags = 0
                             Toast.makeText(
                                 applicationContext,

@@ -31,14 +31,14 @@ class ProfessionalActivity : AppCompatActivity() {
 
         professionalButtonReturn.setOnClickListener {
             SharedPrefManager.getInstance(this).clear()
-            val intent = Intent(applicationContext, LoginActivity::class.java)
+            val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = 0
             startActivity(intent)
         }
 
         professionalButtonLogout.setOnClickListener {
             SharedPrefManager.getInstance(this).clear()
-            val intent = Intent(applicationContext, LoginActivity::class.java)
+            val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = 0
             startActivity(intent)
         }
@@ -150,7 +150,7 @@ class ProfessionalActivity : AppCompatActivity() {
         }
 
         if (!SharedPrefManager.getInstance(this).isLoggedIn) {
-            val intent = Intent(applicationContext, LoginActivity::class.java)
+            val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
             startActivity(intent)

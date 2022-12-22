@@ -62,9 +62,6 @@ class UpdateProfileActivity : AppCompatActivity() {
                         call: Call<DefaultResponse>,
                         response: Response<DefaultResponse>
                     ) {
-
-                        Toast.makeText(applicationContext, response.code().toString(), Toast.LENGTH_LONG).show()
-
                         if (response.code() == 202) {
                             Toast.makeText(
                                 applicationContext,
@@ -137,5 +134,9 @@ class UpdateProfileActivity : AppCompatActivity() {
                 })
         }
 
+        profileUpdateButtonProfiles.setOnClickListener {
+            val intent = Intent(applicationContext, UserProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

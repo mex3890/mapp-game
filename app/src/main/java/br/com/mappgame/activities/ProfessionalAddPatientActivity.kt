@@ -137,7 +137,7 @@ class ProfessionalAddPatientActivity : AppCompatActivity() {
 
         professionalButtonLogout.setOnClickListener {
             SharedPrefManager.getInstance(applicationContext).clear()
-            val intent = Intent(applicationContext, LoginActivity::class.java)
+            val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = 0
 
             startActivity(intent)

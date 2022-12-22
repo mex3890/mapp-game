@@ -25,7 +25,6 @@ import br.com.mappgame.storage.SharedPrefManager
 import com.jjoe64.graphview.GraphView
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_professional_show_patient.*
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -121,13 +120,6 @@ class ProfessionalShowPatient : AppCompatActivity() {
                                     call: Call<DefaultResponse>,
                                     response: Response<DefaultResponse>
                                 ) {
-
-                                    Toast.makeText(
-                                        applicationContext,
-                                        response.code().toString(),
-                                        Toast.LENGTH_LONG
-                                    ).show()
-
                                     if (response.code() == 202) {
                                         Toast.makeText(
                                             applicationContext,
@@ -179,7 +171,7 @@ class ProfessionalShowPatient : AppCompatActivity() {
 
         profileButtonPdf.setOnClickListener {
             if (user != null) {
-                RetrofitClient.instance.downloadAnswersPdf(patient_id = 1, user_id = 1)
+                RetrofitClient.instance.downloadAnswersPdf(patient_id = id, user_id = user.id)
                     .enqueue(object : Callback<ResponseBody> {
                         override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                             Toast.makeText(
@@ -210,7 +202,7 @@ class ProfessionalShowPatient : AppCompatActivity() {
 
                                 Toast.makeText(
                                     applicationContext,
-                                    "Download Success: ".plus(success.toString()),
+                                    "Download Success",
                                     Toast.LENGTH_LONG
                                 ).show()
                             }
@@ -269,13 +261,14 @@ class ProfessionalShowPatient : AppCompatActivity() {
 
         answers.forEach { answer: Answer ->
             arrayData += if (!mountWithHits) {
-                DataPoint(i, answer.hits.toDouble())
-            } else {
                 DataPoint(i, answer.errors.toDouble())
+            } else {
+                DataPoint(i, answer.hits.toDouble())
             }
 
             i += 1.0
         }
+
 
         val series: LineGraphSeries<DataPoint> = LineGraphSeries(arrayData)
         series.isDrawDataPoints = true
@@ -377,6 +370,7 @@ class ProfessionalShowPatient : AppCompatActivity() {
                 if (outputStream !== null) {
                     outputStream.close()
                 }
+
             }
         } catch (exception: IOException) {
             return false
