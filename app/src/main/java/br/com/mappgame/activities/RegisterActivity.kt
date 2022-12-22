@@ -3,7 +3,6 @@ package br.com.mappgame.activities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.com.mappgame.R
 import br.com.mappgame.api.RetrofitClient
@@ -57,63 +56,51 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            buttonSignUp.setOnClickListener {
-                val builder = AlertDialog.Builder(this@RegisterActivity)
-                builder.setMessage("Este aplicativo irá utilizar apenas seus dados de resposta que não serão atrelados a dados pessoais para fins de estudo e pesquisa, caso concorde clique em \"Confirmar\".")
-                    .setCancelable(false)
-                    .setPositiveButton("Confirmar") { dialog, _ ->
-                        RetrofitClient.instance.registerUser(email, password, name, phone)
-                            .enqueue(object : Callback<DefaultResponse> {
-                                override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                                    Toast.makeText(
-                                        applicationContext,
-                                        "Internal App Error, try again letter or verify your connection",
-                                        Toast.LENGTH_LONG
-                                    ).show()
-                                }
-
-                                override fun onResponse(
-                                    call: Call<DefaultResponse>,
-                                    response: Response<DefaultResponse>
-                                ) {
-                                    if (response.code() == 202) {
-                                        Toast.makeText(
-                                            applicationContext,
-                                            response.body()?.error,
-                                            Toast.LENGTH_LONG
-                                        ).show()
-                                    }
-
-                                    if (response.code() == 500) {
-                                        Toast.makeText(
-                                            applicationContext,
-                                            "Internal Server error, try again latter!",
-                                            Toast.LENGTH_LONG
-                                        ).show()
-                                    }
-
-                                    if (response.code() == 200) {
-                                        Toast.makeText(
-                                            applicationContext,
-                                            response.body()?.message,
-                                            Toast.LENGTH_LONG
-                                        ).show()
-                                        startActivity(
-                                            Intent(
-                                                this@RegisterActivity,
-                                                MainActivity::class.java
-                                            )
-                                        )
-                                    }
-                                }
-                            })
+            RetrofitClient.instance.registerUser(email, password, name, phone)
+                .enqueue(object : Callback<DefaultResponse> {
+                    override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                        Toast.makeText(
+                            applicationContext,
+                            "Internal App Error, try again letter or verify your connection",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
-                    .setNegativeButton("Não registrar") { dialog, _ ->
-                        dialog.dismiss()
+
+                    override fun onResponse(
+                        call: Call<DefaultResponse>,
+                        response: Response<DefaultResponse>
+                    ) {
+                        if (response.code() == 202) {
+                            Toast.makeText(
+                                applicationContext,
+                                response.body()?.error,
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
+                        if (response.code() == 500) {
+                            Toast.makeText(
+                                applicationContext,
+                                "Internal Server error, try again latter!",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
+                        if (response.code() == 200) {
+                            Toast.makeText(
+                                applicationContext,
+                                response.body()?.message,
+                                Toast.LENGTH_LONG
+                            ).show()
+                            startActivity(
+                                Intent(
+                                    this@RegisterActivity,
+                                    MainActivity::class.java
+                                )
+                            )
+                        }
                     }
-                val alert = builder.create()
-                alert.show()
-            }
+                })
         }
     }
 

@@ -89,9 +89,9 @@
         android:layout_below="@+id/textViewLogin"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="50dp"
+        android:focusableInTouchMode="false"
         android:background="@color/colorPrimaryButton"
         android:text="@string/register_button_label"
-        android:textAllCaps="false"
         android:textColor="@color/colorFormBackground" />
 
 </RelativeLayout>

@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.com.mappgame.R
 import br.com.mappgame.api.RetrofitClient
@@ -111,12 +112,40 @@ class UserProfileActivity : AppCompatActivity() {
             }
         }
 
-        userButtonLogout.setOnClickListener {
-            SharedPrefManager.getInstance(this).clear()
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            intent.flags = 0
+        userButtonReturn.setOnClickListener {
+            val builder = AlertDialog.Builder(this@UserProfileActivity)
+            builder.setMessage("Do you really want to logout?")
+                .setCancelable(false)
+                .setPositiveButton("Yes") { dialog, _ ->
+                    SharedPrefManager.getInstance(this).clear()
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    intent.flags = 0
+                    startActivity(intent)
+                    dialog.dismiss()
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
+        }
 
-            startActivity(intent)
+        userButtonLogout.setOnClickListener {
+            val builder = AlertDialog.Builder(this@UserProfileActivity)
+            builder.setMessage("Do you really want to logout?")
+                .setCancelable(false)
+                .setPositiveButton("Yes") { dialog, _ ->
+                    SharedPrefManager.getInstance(this).clear()
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    intent.flags = 0
+                    startActivity(intent)
+                    dialog.dismiss()
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
         }
 
         userButtonProfile.setOnClickListener {

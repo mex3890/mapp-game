@@ -3,6 +3,7 @@ package br.com.mappgame.activities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.com.mappgame.R
 import br.com.mappgame.api.RetrofitClient
@@ -112,11 +113,21 @@ class UpdateUserActivity : AppCompatActivity() {
         }
 
         userUpdateButtonLogout.setOnClickListener {
-            SharedPrefManager.getInstance(this).clear()
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            intent.flags = 0
-
-            startActivity(intent)
+            val builder = AlertDialog.Builder(this@UpdateUserActivity)
+            builder.setMessage("Do you really want to logout?")
+                .setCancelable(false)
+                .setPositiveButton("Yes") { dialog, _ ->
+                    SharedPrefManager.getInstance(this).clear()
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    intent.flags = 0
+                    startActivity(intent)
+                    dialog.dismiss()
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
         }
 
         userUpdateButtonReturn.setOnClickListener {

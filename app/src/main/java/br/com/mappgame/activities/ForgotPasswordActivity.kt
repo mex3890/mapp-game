@@ -18,6 +18,10 @@ class ForgotPasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_password)
 
+        loginRedirect.setOnClickListener {
+            startActivity(Intent(applicationContext, MainActivity::class.java))
+        }
+
         buttonSendRequest.setOnClickListener {
             val email = editTextEmail.text.toString().trim()
             val emailConfirmation = editTextConfirmEmail.text.toString().trim()

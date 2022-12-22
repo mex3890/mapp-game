@@ -2,20 +2,28 @@ package br.com.mappgame.activities
 
 import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.annotation.SuppressLint
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.DashPathEffect
 import android.graphics.Paint
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import br.com.mappgame.R
 import br.com.mappgame.api.RetrofitClient
 import br.com.mappgame.models.Answer
@@ -31,9 +39,15 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.*
+import kotlin.random.Random
 
 
 class ProfessionalShowPatient : AppCompatActivity() {
+
+    private val channelId = Random.nextInt(100).toString()
+    private val channelName = "MappGameChannel"
+
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +57,10 @@ class ProfessionalShowPatient : AppCompatActivity() {
         val id = intent.getIntExtra("id", 0)
         val user = SharedPrefManager.getInstance(applicationContext).user
         text_name_patient.text = "Patient: ".plus(name)
+        editTextPerViewCount.setText(
+            SharedPrefManager.getInstance(applicationContext).countPerAreaViewGraph.toString()
+                ?: "10"
+        )
 
         RetrofitClient.instance.patientAnswers(id)
             .enqueue(object : Callback<PatientAnswersResponse> {
@@ -181,6 +199,7 @@ class ProfessionalShowPatient : AppCompatActivity() {
                             ).show()
                         }
 
+                        @RequiresApi(Build.VERSION_CODES.S)
                         override fun onResponse(
                             call: Call<ResponseBody>,
                             response: Response<ResponseBody>
@@ -194,11 +213,12 @@ class ProfessionalShowPatient : AppCompatActivity() {
                             }
 
                             if (response.isSuccessful) {
-                                val success = response.body()?.let { it1 ->
-                                    if (name != null) {
-                                        writeResponseBodyToDisk(it1, name)
+                                response.body()
+                                    ?.let { it1 ->
+                                        if (name != null) {
+                                            writeResponseBodyToDisk(it1, name)
+                                        }
                                     }
-                                }
 
                                 Toast.makeText(
                                     applicationContext,
@@ -312,7 +332,8 @@ class ProfessionalShowPatient : AppCompatActivity() {
         graph.gridLabelRenderer.horizontalAxisTitleColor = Color.WHITE
     }
 
-    fun writeResponseBodyToDisk(body: ResponseBody, name: String): Boolean {
+    @RequiresApi(Build.VERSION_CODES.S)
+    fun writeResponseBodyToDisk(body: ResponseBody, name: String) {
         try {
             if (ContextCompat.checkSelfPermission(
                     applicationContext,
@@ -323,9 +344,11 @@ class ProfessionalShowPatient : AppCompatActivity() {
                 ActivityCompat.requestPermissions(this, arrayOf(array), 100)
             }
 
-            val pdfFile: File = File(
+            val replaced_name = name.lowercase().replace(' ', '_')
+
+            val pdfFile = File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-                "patient_".plus(name).plus("_answers.pdf")
+                "patient_".plus(replaced_name).plus("_answers.pdf")
             )
 
             var inputStream: InputStream? = null
@@ -359,9 +382,8 @@ class ProfessionalShowPatient : AppCompatActivity() {
                 }
                 outputStream.flush()
 
-                return true
-            } catch (exception: IOException) {
-                return false
+                sendNotification(pdfFile, name)
+            } catch (_: IOException) {
             } finally {
                 if (inputStream !== null) {
                     inputStream.close()
@@ -372,8 +394,76 @@ class ProfessionalShowPatient : AppCompatActivity() {
                 }
 
             }
-        } catch (exception: IOException) {
-            return false
+        } catch (_: IOException) {
+
         }
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            val channel = NotificationChannel(
+                channelId,
+                channelName,
+                NotificationManager.IMPORTANCE_DEFAULT
+            ).apply {
+                lightColor = Color.BLUE
+                enableLights(true)
+            }
+            val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            manager.createNotificationChannel(channel)
+        }
+    }
+
+    @SuppressLint("UnspecifiedImmutableFlag")
+    fun sendNotification(file: File, name: String) {
+        createNotificationChannel()
+
+        val notificationId = Random.nextInt(100)
+
+        val attachmentUri =
+            FileProvider.getUriForFile(applicationContext, "com.freshdesk.helpdesk.provider", file);
+        val openAttachmentIntent = Intent(Intent.ACTION_VIEW);
+        openAttachmentIntent.setDataAndType(attachmentUri, "application/pdf");
+        openAttachmentIntent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION;
+
+        var flag: Int? = null
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            flag = PendingIntent.FLAG_IMMUTABLE
+        } else {
+            flag = PendingIntent.FLAG_UPDATE_CURRENT
+        }
+
+        val pendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            openAttachmentIntent,
+            flag
+        );
+
+//        val intentOpenPdf = PendingIntent.getActivity(
+//            applicationContext,
+//            System.currentTimeMillis().toInt(),
+//            openAttachmentIntent,
+//            PendingIntent.FLAG_UPDATE_CURRENT
+//        )
+
+        val notification = NotificationCompat.Builder(this@ProfessionalShowPatient, channelId)
+            .setContentTitle("Download PDF Complete")
+            .setContentText(
+                "PDF for patient ".plus(name).plus(" available on your download directory!")
+            )
+            .setSmallIcon(R.drawable.main_logo)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .addAction(R.drawable.main_logo, "Open PDF", pendingIntent)
+            .setAutoCancel(true)
+            .build()
+
+
+        val notificationManager = NotificationManagerCompat.from(this@ProfessionalShowPatient)
+
+        notificationManager.notify(notificationId, notification)
+
     }
 }

@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.com.mappgame.R
 import br.com.mappgame.api.RetrofitClient
@@ -30,17 +31,38 @@ class ProfessionalActivity : AppCompatActivity() {
         val professional = SharedPrefManager.getInstance(applicationContext).user
 
         professionalButtonReturn.setOnClickListener {
-            SharedPrefManager.getInstance(this).clear()
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            intent.flags = 0
-            startActivity(intent)
+            val builder = AlertDialog.Builder(this@ProfessionalActivity)
+            builder.setMessage("Do you really want to logout?")
+                .setCancelable(false)
+                .setPositiveButton("Yes") { dialog, _ ->
+                    SharedPrefManager.getInstance(this).clear()
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    intent.flags = 0
+                    startActivity(intent)
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
         }
 
         professionalButtonLogout.setOnClickListener {
-            SharedPrefManager.getInstance(this).clear()
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            intent.flags = 0
-            startActivity(intent)
+            val builder = AlertDialog.Builder(this@ProfessionalActivity)
+            builder.setMessage("Do you really want to logout?")
+                .setCancelable(false)
+                .setPositiveButton("Yes") { dialog, _ ->
+                    SharedPrefManager.getInstance(this).clear()
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    intent.flags = 0
+                    startActivity(intent)
+                    dialog.dismiss()
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
         }
 
         professionalButtonProfile.setOnClickListener {
